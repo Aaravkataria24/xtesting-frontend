@@ -15,7 +15,10 @@ interface MetricsDisplayProps {
   isWinner?: boolean;
 }
 
-export const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, isWinner }) => {
+export const MetricsDisplay: React.FC<MetricsDisplayProps> = ({
+  metrics,
+  isWinner,
+}) => {
   const data = [
     { name: 'Likes', value: metrics.likes },
     { name: 'Replies', value: metrics.replies },
@@ -32,19 +35,20 @@ export const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, isWinne
           </span>
         )}
       </div>
-      
+
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" stroke="#2d2d2d" />
-            <XAxis dataKey="name" stroke="#666" />
-            <YAxis stroke="#666" />
+            <XAxis dataKey="name" stroke="#aaa" />
+            <YAxis stroke="#aaa" />
             <Tooltip
               contentStyle={{
                 backgroundColor: '#1a1a1a',
                 border: '1px solid #333',
                 borderRadius: '8px',
               }}
+              cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
             />
             <Bar
               dataKey="value"
@@ -58,7 +62,7 @@ export const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, isWinne
       <div className="mt-4 p-4 bg-gray-800/50 rounded-lg">
         <div className="text-center">
           <span className="text-2xl font-bold text-neon-blue">
-            {metrics.engagementScore}
+            {Math.round(metrics.engagementScore)}
           </span>
           <p className="text-gray-400">Engagement Score</p>
         </div>

@@ -1,0 +1,1149 @@
+username,content,likes,retweets,replies
+VitalikButerin,Why I support privacy:,5100,1400,1100
+VitalikButerin,"0/ You’ve probably heard people yapping about Cypherpunk, but what exactly is it and what is Ethereum’s specific brand of Cypherpunk? A guest thread by 
+@post_polar_",1600,718,265
+VitalikButerin,"My own current privacy roadmap (much lighter on L1 changes, but also more limited in its consequences): https://ethereum-magicians.org/t/a-maximally-simple-l1-privacy-roadmap/23459…
+
+Highly encourage people to read both!",2300,735,627
+VitalikButerin,"Today's a good day to remember why we're here.
+
+We're building the future of finance—internet finance.
+
+Unstoppable global free trade, not trade wars.
+Credible neutrality, not entrenched interests.
+Permissionless innovation, not bureaucracy.
+Undebasable money, not money printers.",3000,1100,380
+VitalikButerin,"Reconfiguring AllCoreDevs 
+
+To deliver on Ethereum's ambitious L1 roadmap, we should decouple planning and execution. To that end, I'm proposing we reorient ACD to focus on scoping future forks, and elevate our existing testing calls as the main venue for the current ones.",966,435,196
+VitalikButerin,"First ""Protocol Research Call"" hosted by 
+@barnabemonnot
+ and me about to start.
+
+The main topic today will be the future roles of home nodes on the network.
+
+Agenda and YouTube link in next tweet.
+
+Come listen in!
+https://x.com/i/broadcasts/1vAGRDmWBkjxl…",557,357,116
+VitalikButerin,A simple L2 security and finalization roadmap,3200,882,1000
+VitalikButerin,The tree ring model of culture and politics,1400,372,358
+VitalikButerin,We should talk less about public goods funding and more about open source funding,2500,600,574
+VitalikButerin,"What Ethereum needs is a lot of young blood who shared the cypherpunk vision. 
+
+All OGs are jaded. 
+
+It’s on the next generation now.",6100,1100,2000
+VitalikButerin,"Вот это настоящая храбрость. Иногда я могу быть смелым в интернете и однажды на конференции с безопасного расстояния 30 м поругал скаммера. Но эта женщина говорит неприятную правду тем, у кого есть оружие, хотя у неё оружия нет, и если ей повредят, наказание маловероятно.
+
+Герой",2000,291,463
+VitalikButerin,"Going to prison for the rest of your life over non-violent tax offenses is absurd. The case against Roger seems very politically motivated; like with 
+@RealRossU
+, there have been plenty of people and corporations who have been accused of far worse and yet faced sentences far",4800,965,582
+VitalikButerin,One example of this is futarchy,432,204,180
+VitalikButerin,"Deep funding does this for a multi-level graph: what deserves how much credit for what? If you come up with good-enough values for edges of such a graph, then you can fund a single node, and funds will automatically flow to all dependencies.
+
+Could be used as a form of issuance.",257,46,90
+VitalikButerin,"Today, I’m excited to turn the page and share that I will be closing this chapter as Executive Director of the 
+@ethereumfndn
+ soon and stepping into a new role as its President.
+
+Let’s continue building in the garden.
+
+Read my full statement :
+https://blog.ethereum.org/2025/02/25/aya-announcement…",2600,418,632
+VitalikButerin,"Aya first shared the idea of transitioning from ED of 
+@ethereumfndn
+ to President a year ago.
+
+She has accomplished much in her seven years as executive director of the EF. As I see it, the role of an ED is to create an environment where others can shine and do their best work,",3300,503,734
+VitalikButerin,"EF research AMA is happening right now!
+
+https://old.reddit.com/r/ethereum/comments/1iw8ln8/ama_we_are_ef_research_pt_13_25_february_2025/…",1100,345,358
+VitalikButerin,"Ukraine is all of these, and much more.
+
+Many have worked hard and sacrificed so much for decades (arguably centuries) to bring it to where it is today.
+
+I wish the country a bright, secure, sustainable and free and independent future.",2900,388,330
+VitalikButerin,"Glad to see this backdoor push getting a much-deserved smackdown.
+
+Centralized points of mass data collection are inherently dangerous, and will inevitably be accessed by all kinds of adversaries. See recently:
+
+https://theguardian.com/us-news/2023/jun/16/louisiana-drivers-license-hack-cyber-attack…
+
+https://nytimes.com/2024/12/30/us/politics/china-hack-treasury.html…",1200,378,384
+VitalikButerin,"Una de las principales virtudes de las blockchain públicas es su absoluta transparencia: eso garantiza que promotores, inversores o usuarios tengan las herramientas para analizar cuidadosamente qué proyectos apoyar o donde invertir su capital.",551,234,99
+VitalikButerin,"Crecimiento was born to support and promote the incredible talent within Argentina's crypto, AI, and tech ecosystem. This movement thrives on the genuine talent of thousands of people building solutions to real problems and positioning Argentina as a world-class leader,",341,76,37
+VitalikButerin,More to come,804,114,146
+VitalikButerin,"EF Treasury has deployed:
+
+- 10,000 ETH into Spark
+- 10,000 ETH into Aave Prime
+- 20,800 ETH into Aave Core
+- 4,200 ETH into Compound
+
+We're grateful for the entire Ethereum security community that has worked diligently to make Ethereum DeFi secure and usable!",5100,1000,501
+VitalikButerin,SaaS was a mistake.,2400,379,453
+VitalikButerin,"QR codes are good though.
+
+My main beef with them is that I think the QR code should just contain the menu directly, skip the URL step. No more agonizing long waits for the thing to load.
+
+Max QR code size is 2953 bytes, plenty to fit a text menu, with modern gen-AI compression",894,172,295
+VitalikButerin,"yeah i love the quality over quantity angle of deep funding
+
+much better of a juror experience when i dont need to vote on 600 projects but can instead carefully select a few comparisons, go in depth, and have those judgments replicate across the 600 projects",455,98,110
+VitalikButerin,"Home stakers - worried about running out of storage on your 2TB machine?
+
+The Nimbus execution client, integrated with the Portal client, aims to reduce storage needs for a validator node to <500GB, allowing lower-end devices to run an Ethereum node.",485,93,57
+VitalikButerin,"Welcome 
+@TheDevanshMehta
+ !",1200,211,359
+VitalikButerin,"L1 is scaling.
+
+A big shoutout to all the developers working on EIP-4444 (history expiry), statelessness (see the new binary tree EIP! https://github.com/ethereum/EIPs/pull/9257… ), client efficiency upgrades, and other features that will make higher L1 gas limits decentralization-friendly.",4700,702,651
+VitalikButerin,"Pectra, expected in March, will increase the blob target from 3 to 6, doubling the capacity of L2s.
+
+IMO we should make the blob target also staker-voted, so that it can increase in respose to technology improvements without waiting for hard forks.",1500,246,240
+VitalikButerin,"Update: there is currently an effort to add 7702 support to both 
+@Ledger
+ and 
+@Trezor
+. Should see some public code soon. Still need to make sure its released to end users as soon as possible",481,76,178
+VitalikButerin,"Let's work hard to make sure 7702 (and later on even more powerful versions of AA, which don't require any ""ECDSA master key"" at all) is not just a blockchain feature but also a reality for users!",1900,337,725
+VitalikButerin,".
+@drakefjustin
+'s work is incredibly valuable to ethereum's future, especially those of us who care about keeping the protocol decentralized and secure long-term and fighting against the zoo of technical bloat.
+
+The beam chain roadmap got criticism for the ""2029"" date, but what",2500,514,661
+VitalikButerin,"reintroducing 
+@commitwtf
+ — an onchain accountability protocol
+
+your commitments should mean something and there should be a cost to not keeping your word.",636,207,115
+VitalikButerin,"Introducing Ethproofs
+
+a) Why we need 
+@eth_proofs
+?
+
+The endgame of Ethereum is crystal clear: anyone should be able to verify the state with any device. This objective can only become a reality through a fully SNARKified L1. Previous efforts involved writing custom ZK circuits to",643,184,92
+VitalikButerin,"Our first 2025 ddocs update
+Powered by ur feedback 
+
+-Export/Print: get ur docs & .md as well-formatted PDFs
+- dDocs & browser: just type in the title directly from your browser navbar
+-Page breaks: type ""/"" or ""==="" to break down your docs into custom sections 
+-Zoom zooom:",496,130,81
+VitalikButerin,"Today, there are two primary challenges:
+
+1. Scale
+2. Challenges of heterogeneity (standards, interoperability, proof system security, user experience, economics ....)",970,96,73
+VitalikButerin,"L2s have made great progress, and this is a testament to Ethereum's ecosystem and development philosophy working in action.",1000,119,113
+VitalikButerin,Scaling Ethereum L1 and L2s in 2025 and beyond,11000,2800,1000
+VitalikButerin,"Ethereum distinguishes itself in two ways: a principled technological and social philosophy committed to decentralization, and real value already brought to millions of users.",1100,144,56
+VitalikButerin,i am cringe but i am free,494,54,42
+VitalikButerin,"Markets gud, price mechanisms gud. Congestion pricing in NYC continues to be winning, just as it has been winning for years in Stockholm, Singapore and elsewhere.
+
+When demand > supply, there is always an auction. Either you pay with money, or you pay by waiting in line, with",2800,331,540
+VitalikButerin,"The risk of politician coins comes from the fact that they are such a perfect bribery vehicle. If a politician issues a coin, you do not even need to send *them* any coins to give them money. Instead, you just buy and hold the coin, and this increases the value of their holdings",5100,1100,1000
+VitalikButerin,"I don't know who needs to hear this but having acceptable targets for fantasies of sadistic violence whether nazis, communists, the poor, the rich, men or criminals - is fundamentally bad for your soul and habituates you to inaction in the face of desire, as fantasy usually does",1000,96,50
+VitalikButerin,GM Ross,8700,537,670
+VitalikButerin,"Ross is free. His mother never gave up. The whole story is about one mother's unstoppable love for her child. She kept going and then got him free.
+
+Women have sacred power. They create life and nurture society. They are diplomats and empaths. And mothers are true power.",1700,193,60
+VitalikButerin,"Just to fill you in: I left the EF last year due to health issues and in an attempt to clear my head after working my ass off exclusively at the EF and on Ethereum for seven years.
+
+I stepped aside, and the EF and the broader Ethereum ecosystem moved on without missing a beat—new",4300,742,447
+VitalikButerin,GMilady,2200,332,157
+VitalikButerin,"BTW your attempted scapegoat attack against Aya is not even correct. Left: the wired English version. Right: AI translation of the Japanese original. 
+
+https://wired.jp/article/the-next-innovators-4-aya-miyaguchi/…
+
+You may of course still disagree with her approach, but it is NOT ""competing and winning are bad"".",1500,147,244
+VitalikButerin,"The future of the world computer is decentralized.
+
+EF is only one part of the world computer.
+
+Perhaps the org that some people want to reform and bring back to new greater heights is actually not EF, but 
+@Consensys
+ (or some third thing in the same category).
+
+EF should not",3300,459,951
+VitalikButerin,"New wallet attribute:  𝗟𝟭 𝗰𝗵𝗮𝗶𝗻 𝘃𝗲𝗿𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻.
+
+""Trust but verify"" isn't real if wallets don't actually verify.
+
+Walletbeat now rates wallets based on whether they verify L1 chain state by running a light client like Helios (by 
+@NoahCitron
+).
+
+Raising the bar.",432,88,87
+VitalikButerin,"We are indeed currently in the process of large changes to EF leadership structure, which has been ongoing for close to a year. Some of this has already been executed on and made public, and some is still in progress.
+
+What we're trying to achieve is primarily the following",18000,4500,5600
+VitalikButerin,"Imho we should aim (grain of salt etc...) to at least 3-4x the pectra blob throughput in peerdas, so 6-8x from today, and maybe more. Two things we know:
+1. Most of the network can handle *a lot* more than today
+2. Peerdas requires the weakest nodes to use 8x less bandwidth",491,71,73
+VitalikButerin,"Dependency minimalism (writing software that deliberately tries to have as few dependencies as practical) is a really underrated virtue imo.
+
+Every single dependency is a risk that ""something will go wrong"" during someone's installation process. Installing projects with hundreds",5100,700,1100
+VitalikButerin,"Blob fee market is already looking very different from what it was like before October.
+
+It's important that any improvements we make to the blob fee market don't overfit to any one specific time period.",2900,313,596
+VitalikButerin,"The 
+@Soneium
+ situation is a good live demonstration of how launching an ethereum L2 is great for businesses *and* users.
+
+Businesses can make very fine-grained choices around how much control they keep vs give to users.
+
+But whatever rules they choose, that's what the rules are.",4100,980,923
+VitalikButerin,"Excited to announce that 
+@ralexstokes
+ and I are moving to the position of EF Research co-leads!
+
+With this new role, I hope to accelerate pragmatic research for Ethereum and find more ways for us to involve the ecosystem in our many exciting projects.
+
+What is EF Research?",800,185,152
+VitalikButerin,"PSA: I joined the Ethereum Foundation Leadership Team last week.
+
+I joined the EF Research team in mid-2017, starting by contributing to the early sharding proof-of-concept. Over the years, my focus has been on L1 R&D, and that will remain my core area defense. I'm also",790,169,148
+VitalikButerin,"Thanks for the warm welcome to the family and your work for wild animals!
+
+I'm happy to be adoptive father to Moo Deng as she grows up over the next 2y and support her with my 10M THB donation, maybe more as I set aside 88 ETH for+ frens. May they live long and prosper",6300,2200,1500
+VitalikButerin,"Do you want your AI agent to be more than a Twitter reply guy?
+
+Are you a ML modeller looking for a challenge?
+
+Well, here's your chance at some glory!
+
+Introducing the Deep Funding Christmas special: a mini contest to predict funding to open source dependencies!",680,339,195
+VitalikButerin,"Deep funding combines two ideas:
+
+1. Value as a graph: instead of asking ""how much did X contribute to humanity?"", ask ""how much of the credit for Y belongs to X?""
+2. Distilled human judgement: an open market of AIs fills in all the weights, human jury randomly spot-checks them",4200,1100,1400
+VitalikButerin,"NEW - Part 2 of my 
+@VitalikButerin
+ interview is now live.
+
+Joined by guest cohosts 
+@sejal_rekhan
+ and 
+@TheDevanshMehta
+ , we chat with Vitalik about deep funding via dependency graphs
+
+From measuring a project's value to humanity  to assessing how much credit dependency A",663,314,195
+VitalikButerin,"It happened! The Lads are joined by none other than 
+@VitalikButerin
+ for Episode #73 
+
+ OUT NOW on 
+@YouTube
+ & 
+@Spotify
+! 
+
+In this episode we cover:
+
+ Crypto & A.I. Intersections 
+ 
+@ethereum
+'s North Star
+ $ETH: The Asset",762,232,160
+VitalikButerin,"NEW!  
+@VitalikButerin
+ joins the 
+@greenpillnet
+ podcast today to talk about Web3 Public Goods Funding in 2025.
+
+This episode is part 1 of a 2 part series.  In ep 1 we 
+ discuss: 
+
+TIMESTAMPS
+00:00 - Intro 
+2:18 - Why Public Goods?",680,248,144
+VitalikButerin,"As 
+@VitalikButerin
+ points out, there are three Egyptian god cards that are about to be played in cryptography over the next several years:
+
+1) ZK: prove computation without revealing data
+2) FHE: compute on encrypted data
+3) Indistinguishability obfuscation: obfuscate the",1400,337,223
+VitalikButerin,"Possible futures of the Ethereum protocol, part 6: The Splurge",4000,792,1200
+VitalikButerin,"Anyone has the right to step up and be part of the solution to growing the Ethereum community, anywhere in the world. This group sets a great example. I recommend people read their self-intro (through AI translator if needed).",3700,798,1500
+VitalikButerin,"Possible futures of the Ethereum protocol, part 5: the Purge",3500,686,975
+VitalikButerin,biggest devcon ever,357,74,76
+VitalikButerin,"An important step.
+
+Some important next steps:
+
+* Helios (or alternatives) being integrated into user wallets, on mobile and desktop
+* L2 configs moving onchain (first step: https://github.com/ethereum/ERCs/pull/669… )
+* L2 configs including specification of state proof verification rules (a",3900,603,773
+VitalikButerin,"Possible futures of the Ethereum protocol, part 4: The Verge",3500,808,1100
+VitalikButerin,"Possible futures of the Ethereum protocol, part 3: The Scourge
+
+https://vitalik.eth.limo/general/2024/10/20/futures3.html…
+
+(I tried my best to be fair to all sides of the debates here!)",3500,799,979
+VitalikButerin,"Possible futures for the Ethereum protocol, part 2: The Surge",4600,1000,1100
+VitalikButerin,"Airdrops are a fascinating initial use case for ZK / blockchain-based identity / credential / attestation frameworks. The goals of an airdrop are:
+
+(i) distribute to community members [and not randos who will all immediately sell]
+(ii) reward contributions to the project
+(iii) be",6200,1400,1100
+VitalikButerin,"One related point is that giving tokens away for free is not the only ""form factor"" that makes sense for this: you can also do discounted sales.
+
+I talk about reasons why to do this here:
+
+https://vitalik.eth.limo/general/2021/08/22/prices.html…
+
+Depending on the degree of membership/contribution you can prove,",1000,235,597
+VitalikButerin,"Updates from 
+@0xstark
+ on EF spending.
+
+The key info is in this chart.
+
+The ""new institutions"" category basically means 
+@NomicFoundation
+, 
+@TheDRC_
+ , 
+@l2beat
+, 
+@0xPARC
+ etc - no World Economic Forum insect protein research here!
+
+More info has been and will be published; see thread.",2700,715,701
+VitalikButerin,"No execution client has more than 2/3 market share, according to https://supermajority.info
+
+Great news for the robustness of the Ethereum L1.",3000,524,563
+VitalikButerin,"See also: great talk by 
+@peter_szilagyi
+ on making it easier for each node to verify each block with multiple clients in parallel.",486,88,160
+VitalikButerin,"One concept I introduced in my recent review of the bitcoin block size war books ( https://vitalik.eth.limo/general/2024/05/31/blocksize.html… ) is the one-sided competence trap.
+
+This is a pattern that I've seen appear in many different types of contexts. It would be good to better understand ways to escape it.",1600,346,353
+VitalikButerin,The last week of Ethereum state tree research be like...,2300,379,455
+VitalikButerin,"Exploring circle STARKs
+
+https://vitalik.eth.limo/general/2024/07/23/circlestarks.html…
+
+Thank you to 
+@StarkwareLtd
+ friends for the kind support in understanding these concepts!
+
+See also my implementation at https://github.com/ethereum/research/tree/master/circlestark…",2100,549,515
+VitalikButerin,"Against choosing your political allegiances based on who is ""pro-crypto""",7700,2100,1700
+VitalikButerin,"Me, early 2024: hmm I haven't been cancelled for a while, maybe I should say something spicy and do another round. What should it be? Genetic engineering? Geopolitics? Stick up for illegal immigrants?
+
+Me, Jul 2024: cancelled for... trying not to get airborne diseases",5200,590,1200
+VitalikButerin,"Plane be like...
+
+Me be like...
+
+We really need to clean up our indoor air, but until then thank you 
+@zhouliang_mask
+!",10000,1500,2100
+VitalikButerin,"Left: depositing to 
+@Polymarket
+ today
+Right: depositing to 
+@Polymarket
+ as it should be
+
+Let's work together on rolling out ERC-3770 and ERC-7683 today!",4100,673,967
+VitalikButerin,"We really need much more open source in the auto industry.  Really sad that ""if the manufacturer disappears, the car is useless now"" has seemingly so quickly become a default.",2600,443,595
+VitalikButerin,"Last week, Ethereum L1 client, research, testing and devops teams gathered for Nyota , a week long interop event focused on Pectra, PeerDAS and Verkle.
+
+We also hosted a first of its kind community event for African builders. Here's a full recap !",1300,943,411
+VitalikButerin,"Glen 
+@glenweyl
+ and Audrey 
+@audreyt
+ , two people whose thinking I highly respect and that has influenced a lot of my thinking around governance and similar topics, have a new book that describes their big-picture vision of where the future of technology could go.
+
+Also written in",1200,386,495
+VitalikButerin,"I'm really proud that ethereum does not have any culture of trying to prevent people from speaking their minds, even when they have very negative feelings toward major things in the protocol or ecosystem.
+
+Some wave the ideal of ""open discourse"" as a flag, some take it seriously.",8000,1800,1300
+VitalikButerin,"Grats 
+@dankrad
+ @peter_szilagyi
+ you got me to interrupt my work on EIPs and make a twitter response that turned into an unscheduled poast",2400,608,538
+VitalikButerin,Multidimensional gas pricing:,2700,837,1400
+VitalikButerin,EIP-7702 has risen,857,402,261
+VitalikButerin,"Since a lot of people are interested in fully homomorphic encryption (FHE) recently, re-upping my article from 2020 that goes into how the math works in depth:",3800,1300,3300
+VitalikButerin,Also a toy implementation of one scheme here:,758,193,878
+VitalikButerin,Lately there's a lot of chatter about the road to full account abstraction.  I wrote some notes on what we've been building and how it gets us to full AA.,530,315,160
+VitalikButerin,"Fourth, continue improving on security.
+
+We need to raise our standards. By the end of the year, I think we should only refer to rollups that are at least stage 1 as ""rollups"".
+
+Moving to stage 2 (fully trusting code) is the next step and will require moving carefully.",493,115,91
+VitalikButerin,"What does this mean more broadly?
+
+I argue that now that the merge and EIP-4844 are done, we are decidedly on the right side of the S-curve. Further L1 changes will be quite meaningful and significant, but relatively milder.",361,93,77
+VitalikButerin,"Second, optimistic data constructions, both Plasma and other ""hybrid data availability"" ideas that are designed to maximize security.",267,65,63
+VitalikButerin,"Third, improve on execution-related constraints, both parallelization and storage-related issues.",364,93,66
+VitalikButerin,"The Dencun hard fork has activated, and thanks to Blobscriptions the blob fee markets are now in ""price discovery mode"".",814,272,190
+VitalikButerin,"Meanwhile rollups also need to improve, in four key ways.
+
+First, data compression.",325,72,67
+VitalikButerin,"The next step is verifying blobs with PeerDAS, a conservative version of DAS that can offer some additional scaling. At first, we'll likely see some clients full-verifying and others doing DAS checks.
+
+More and more advanced versions of DAS can be introduced over time.",302,57,71
+VitalikButerin,"BREAKING NEWS  
+@VitalikButerin
+'s first-ever ALL-Mandarin podcast is now available for free listening on all channels.  https://podcasts.apple.com/tw/podcast/%E5%AF%B6%E5%8D%9A%E6%9C%8B%E5%8F%8B%E8%AA%AA/id1484923390?l=en&i=1000643585985…
+Truly inspiring. Must listen, no matter you wanna learn and practice Mandarin or not",1600,478,490
+VitalikButerin,The end of my childhood:,6800,1700,2100
+VitalikButerin,The promise and challenges of crypto + AI applications:,7800,3000,2000
+VitalikButerin,"Reminder: modern cars are highly networked computers and are a privacy nightmare.
+
+Very under-explored sector for privacy improvements. Some ""fancy ZK"" but also some plain boring ""collect and track less stuff please"".",3400,865,1000
+VitalikButerin,"New post:
+""bci/acc: A Pragmatic Path to Compete with Artificial Superintelligence: An e/acc zoom-in on brain interfaces, towards human superintelligence"" 
+
+Strap in: it's long but rewarding 
+
+The summary:
+
+Artificial superintelligence is coming soon. We need a competitive",919,381,234
+VitalikButerin,"@TempoXspace
+ ⿻ Plurality Salon 
+hosted by@BlockTempo 
+
+Starting at 4PM UTC+8 
+
+Special thanks to 
+@Glenweyl
+ and 
+@vitalikButerin
+ for joining and exploring the Taiwanese plural experience at TempoX Accelerator space
+
+Join our livestream and become the co-contributor of",417,190,215
+VitalikButerin,"Over $100m distributed in 
+@Optimism
+ RetroPGF round 3.
+
+Really impressed to see their ongoing commitment to funding public goods, helping devs and others contribute to Ethereum even if they lack a business model.
+
+Hope to see more projects doing QF and RPGF rounds in the future!",5300,1300,1200
+VitalikButerin,"VDFs have been shrunk to reflect a temporary reduced emphasis, due to cryptographic weaknesses in existing constructions:
+
+https://ethresear.ch/t/statement-regarding-the-public-report-on-the-analysis-of-minroot/16670…
+
+Deep crypto (eg. obfuscation) and delay-encrypted mempools have been added to reflect growing research interest in these topics.",885,190,188
+VitalikButerin,"Big thanks to 
+@drakefjustin
+ @fradamt
+ @mikeneuder
+ @dankrad
+ @barnabemonnot
+ @asanso
+ @icebearhww
+ @domothy
+ @gballet
+  for feedback!",923,88,218
+VitalikButerin,Make Ethereum cypherpunk again,12000,4400,2300
+VitalikButerin,"A PoS simplification proposal: make a design that only requires 8192 signatures per slot (even with SSF), making the consensus implementation considerably simpler and lighter.",3400,913,829
+VitalikButerin,"A post on benefits and challenges of enshrined ZK-EVMs at layer 1:
+
+https://notes.ethereum.org/@vbuterin/enshrined_zk_evm…
+
+There's different options and the tradeoffs get complex!",2700,981,1500
+VitalikButerin,"New monster post: my own current perspective on the recent debates around techno-optimism, AI risks, and ways to avoid extreme centralization in the 21st century.
+
+https://vitalik.eth.limo/general/2023/11/27/techno_optimism.html…",8700,2700,1400
+VitalikButerin,Human beings are deeply good.,1600,643,373
+VitalikButerin,"We are the brightest star. There is a lot of good that can come from ongoing human progress, into the stars  and beyond. But there are big forks in the road and we need to choose carefully. Accelerate, but accelerate carefully and well.",2300,2400,2500
+VitalikButerin,"Now, back to AI. Many AI safety proposals are of the form ""let's make sure only safe licensed good guys can access the tech"". But my polling suggests that, if regulation has to be done, people would rather just delay AI outright with *no one* given special rights to pull ahead.",184,15,8
+VitalikButerin,"Polytheistic AI, where every individual (or tribe, or country, or...) has their own AI seems cool, but I worry that it may be unstable, and in the limit still leaves other problems unresolved.",182,21,12
+VitalikButerin,Exit games for EVM validiums: the return of Plasma,4200,1400,7000
+VitalikButerin,Different types of layer 2s,5000,2200,3400
+VitalikButerin,"About a month ago, I tried to draw this to categorize the layers, but I realized...
+
+(i) layer 2 vs layer 3 is an architecture distinction, not a security distinction, making it much less neat
+(ii) the big intermediate space between rollups and validiums creates a, err, firestorm",1500,724,663
+VitalikButerin,Protocol and staking pool changes that could improve decentralization and reduce consensus overhead:,3700,4700,1700
+VitalikButerin,"Can online networks become viable communities and further their goals in the real world? I brought two hundred people together in Montenegro to find out.
+
+New from 
+@VitalikButerin",1000,408,242
+VitalikButerin,What is a country but a collection of minds?,699,466,316
+VitalikButerin,What do I think about biometric proof of personhood?,5700,2800,1800
+VitalikButerin,"OK WE TRY AGAIN! 
+@VitalikButerin",1300,837,858
+VitalikButerin,"Happy tau day!
+
+https://tauday.com
+
+Today I'll take a break from my break from twittering and do another twitter AMA.
+
+Feel free to ask questions about any crypto or non-crypto topic. People I follow can reply (to minimize spam), everyone can quote, I'll check both!",3000,1900,35
+VitalikButerin,"Deeper dive on L2->L1 and cross-L2 reading. Much more technical than  the previous post, but gets into some ideas on how it could be  implemented.
+
+There's a lot of value in identifying better strategies for L1 <-> L2 interactions and standardizing them.
+
+https://vitalik.ca/general/2023/06/20/deeperdive.html…",4800,3300,3300
+VitalikButerin,The Three Transitions:,5900,2800,1800
+VitalikButerin,"Last year 
+@CryptoRelief_
+ led by 
+@sandeepnailwal
+ allocated $100m to Covid research projects I wanted to fund
+
+Sandeep and I discussed and jointly concluded these and other projects are high-impact and need follow through grants. Hence we decided to put $100m more to these projects",4200,1100,1000
+VitalikButerin,Pandemics beyond Covid continue to be a large risk in the 21st century. We look forward to continuing our efforts to better live with airborne viruses and eventually live without them.,1100,262,392
+VitalikButerin,"We can do the work to understand, prevent, and cure (Long) Covid.
+
+And we can stop airborne pathogens with clean air the same way that we stopped cholera over 100 years ago with clean water.",1700,529,760
+VitalikButerin,"We need to find public health solutions that respect people's rights and freedoms, are widely accessible, and ensure that we not only stay alive and healthy but have enjoyable lives that are worth living.",598,52,335
+VitalikButerin,"For us, this means:
+
+1. A commitment to insist on maximal viable open-source for anything we fund
+2. A focus on solutions that depend not on radical behavior change, but on medical and infrastructure work, behind-the-scenes but nevertheless transparent and open to public scrutiny",500,27,170
+VitalikButerin,"Totally random fun thing:
+
+I took a game I made in my pre-crypto days (back in 2011) and uploaded it to IPFS.
+
+Enjoy, and good luck beating the tutorial!
+
+https://slasha.vitalik.eth.limo",6400,1900,3900
+VitalikButerin,"This time of year, it is essential to be “Bear Aware.” This includes securing trash cans and dumpsters, removing bird feeders, closing garages, and cleaning and locking your car and house doors.
+
+Call your local 
+@COParksWildlife
+ office if a bear becomes a nuisance.",1300,812,2300
+VitalikButerin,"As the year of the Merge ends, we wanted to share updates from many of the Ethereum gardeners and EF-supported teams that achieved long sought accomplishments, both big and small, alongside the rest of the ecosystem in 2022.
+
+Read more, and enjoy(!):",1100,678,807
+VitalikButerin,"Happy new year, and lots of love to you too.
+
+Wish you guys a peace with justice in 2023.
+
+Слава Україні",5800,870,1400
+VitalikButerin,"What even is an institution?
+
+https://vitalik.eth.limo/general/2022/12/30/institutions.html…
+
+Not sure I have amazing new insights, other than that this is a complicated muddle, but sometimes recognizing the muddle is the first step to stepping out of it!",1700,652,765
+VitalikButerin,"One of my favorite concepts that 
+@slatestarcodex
+ taught me is defining things extensionally. See his extensional defn of high modernism:
+
+https://slatestarcodex.com/2017/03/16/book-review-seeing-like-a-state/…
+
+It often really is far more accurate than attempting a self-contained formal description that captures everything.",1400,416,482
+VitalikButerin,"Often when a word has a confusing meaning, the most viable path is to just stop using it. ""Fortnightly"" is too obscure; I'd probably just say ""twice per month"" and ""every 2 months"" (eg. ""your salary is $2500 twice per month"") directly.",1300,262,422
+VitalikButerin,"Another pattern I despise is insisting on a really important difference in meaning to words that sound like synonyms.
+
+""complex vs complicated""
+""money vs currency""
+""decentralized vs distributed""
+
+No. Stop. Let them be synonyms, use more specific words that clarify the difference.",1000,194,310
+VitalikButerin,"My new socials page:
+
+https://vitalik.ca/files/misc_files/socials.txt…
+
+I'm eagerly trying out Mastodon, Farcaster, Lens and others, and I'll bow to Lord Elon and pay his $8/month too... but only when it's available on a non-iOS platform.
+
+Let the best socials win! *
+
+* there will be multiple winners",6600,1300,1400
+VitalikButerin,I'm going to have a heart attack. This is the greatest World Cup game I've ever seen.,157000,11000,1900
+VitalikButerin,https://x.com/Support/status/Support/status/1604531261791522817…,2700,342,345
+VitalikButerin,Really not kind to Messi to use his performance in the World Cup taking up everyone's attention as cover to release this kind of thing.,2600,320,266
+VitalikButerin,"2023 incoming - lots of goodies from Alexey and the team at 
+@nethermindeth",457,289,119
+VitalikButerin,This is really bad imo,11000,1600,999
+VitalikButerin,"The problem is the way in which the policies were introduced, seeming to retrofit around Elon's views on very specific situations.
+
+Basically ""central planning as overfitting"":
+
+https://radicalxchange.org/media/blog/2018-11-26-4m9b8b/…
+
+Good policy should be decided behind veil of ignorance first, applied second",2600,353,340
+VitalikButerin,"Today we've announced Aztec's $100M Series B fundraise, lead by a16z. We raised this money so that we can execute on the Aztec's core vision:
+
+To build a fully end-to-end encrypted, *programmable* blockchain network.",658,297,118
+VitalikButerin,"My one-sentence summary of the AI right now is that it does amazing stuff but it has a high error rate.
+
+This is why it both impresses and frustrates: the times it does really well go viral on twitter, the times it makes a mistake frustrate people using it as a work aid.",4000,552,516
+VitalikButerin,"A particular tragedy that is totally not the 
+@OpenAI
+ @StableDiffusion
+ and co builders' fault, is that people's expectations (including my own) get set by the dazzling stuff that goes viral, and its average case performance inevitably can't match that.",1200,218,200
+VitalikButerin,"Today, we’re incredibly excited to announce Retroactive Public Goods Funding Round 2.
+
+In February 2023, 10M OP will be distributed to the people and projects powering the public goods that make Optimism possible.",7400,5700,1000
+VitalikButerin,"ANOTHER non-censoring relay
+
+https://aestus.live",316,150,77
+VitalikButerin,"Sure! Happy to critique and appreciate your openness to suggestions.
+
+I think my biggest issue with the list is that it overvalues big showy characters whose stature greatly exceeds their contribution, and undervalues people building the tech and the most meaningful applications.",1100,336,175
+VitalikButerin,A quick GPT chatbot coding experiment: updating my blog,1500,387,266
+VitalikButerin,"Good balanced thread on levels of Russian support for the war.
+
+""It's just Putin and maybe 87 other people who are the problem"" is false, but ""everyone in Russia bad"" is also false.
+
+Difficult topic but it's important to have good info to have the best chance of ending the war. https://x.com/AlekseiMiniail/AlekseiMiniailo/status/1600067182628548608…",1300,257,297
+VitalikButerin,"I propose the term ""alfalfa leak"" for something that doesn't give you an easy path to short term profit, but is still ultimately good for you.",3800,581,651
+VitalikButerin,What in the Ethereum application ecosystem excites me,4300,1400,527
+VitalikButerin,"The case for e/acc (""effective accelerationism"") for every industry *other* than AI.",858,143,175
+VitalikButerin,I'd add that technology for coordinating and coming to large-scale agreements (eg. https://pol.is ) is one of the industries that needs to be accelerated.,478,155,104
+VitalikButerin,"Say hello to two more players in the relay market thanks to the 
+@GnosisDAO
+ and 
+@ultrasoundmoney
+ communities.
+
+To support their initial growth, we will be sending them blocks from the Flashbots block builder, effective immediately.",353,177,115
+VitalikButerin,"big day for relay diversity!
+
+the ultra sound relay
+  http://relay.ultrasound.money
+
+the agnostic relay, by 
+@GnosisDAO
+ 
+  http://agnostic-relay.net",510,246,73
+VitalikButerin,"We needn’t assume a central villain in a land of evil.
+
+We needn’t assume a central hero in a land of virtue.
+
+The conspiracy that rules us and the god that saves us are similar myths: desperate simplifications of a nuanced and decentralized world.",1000,263,135
+VitalikButerin,Freedom is important.,26000,4400,2800
+VitalikButerin,"Experimenting with using GPT3 to learn Spanish.
+
+It's not perfect, but also... not that bad!
+
+Hablantes nativos de español, qué errores cometió el GPT3?",3300,464,689
+VitalikButerin,"The notion of ""governance rights"" as a narrative for why a token should be valuable is pathological. You're literally saying ""I'm buying $X because later on someone might buy it from me and a bunch of other people to twist the protocol toward their special interests""",5300,1200,1000
+VitalikButerin,"As a regular individual, ""pay $500 to get a 0.0001% chance to influence the outcome of some votes"" is just not a good trade. The only people for whom it is a good trade are multimillionaires and hedge funds (including attackers).",1700,248,298
+VitalikButerin,To make it crystal clear: WETH is a very simple smart contract - think of it like an adapter. You will ALWAYS be able to convert ETH into WETH and WETH into ETH at a 1:1 rate without any risks. This will be true as long as Ethereum exists.,1200,329,158
+VitalikButerin,"Q1: have you skied, snowboarded, surfed, sailed, dived or done a ≥ 10km walk or run in the last 365 days?
+
+Q2: do you or have you worked on or significantly contributed to a crypto project?",1300,287,761
+VitalikButerin,"Have you seen or heard the term ""base layer"" used before *in the context of clothing*?",799,236,654
+VitalikButerin,"One way 
+@a16z
+ Helios could meaningfully improve things on user privacy and gain more adoption is by combining multiple useful features into its proxy: in addition to its current light client features, also route user requests through Tor.",1100,306,169
+VitalikButerin,"Amazing to see more good work on Long Covid!
+
+Also big thanks to 
+@CryptoRelief_
+ for providing funds that helped make this possible, and of course the Shiba Inu community.",2700,893,470
+VitalikButerin,"The day has come: a first look into Cairo 1.0, fully open-source 
+
+This is a big step towards open-sourcing the StarkNet stack
+
+You can now get familiar with the new syntax, compile and run simple programs locally. #StarkNet support is coming soon",1000,501,90
+VitalikButerin,"I'm thankful for the Internet. 
+
+One day it will be free and open, edge to edge.",55000,6400,2500
+VitalikButerin,"PSA: WE ARE GOING TO REMOVE SELFDESTRUCT!
+
+PLEASE DON'T USE SELFDESTRUCT IN NEW CONTRACTS MOVING FORWARD!
+
+If your contract is broken by this, come and complain here:",670,426,282
+VitalikButerin,"Some charts with estimates on different min bid values for stakers using mev-boost.
+
+A min bid of 0.05 would mean you produce nearly half the blocks yourself (very strong censorship resistance) but only sacrifice a tiny bit of profit.",1000,269,213
+VitalikButerin,"Thread summarizing amazing progress on EIP-4844 (proto-danksharding).
+
+This is a crucial first step to massively lower fees on L2, helping to make it affordable for much larger numbers of users to directly use on-chain applications instead of relying on cefi intermediaries.",2400,643,340
+VitalikButerin,"And we have liftoff 
+
+Multiclient withdrawal devnet with:
+
+Lodestar
+Teku
+Lighthouse
+Nethermind
+Geth
+
+Huge shoutout to",784,349,111
+VitalikButerin,"I am delighted to be launching today the 
+@PluralityInst
+: https://plurality.institute, an interdisciplinary academic technology research network focused on reusable computational systems that facilitate the flourishing of and cooperation across diverse social groups.",426,203,102
+VitalikButerin,"Now commencing phase one of the Bring-Your-Own-Data Revolution 
+
+Introducing SSX - Self-Sovereign Anything - now the easiest way to install Sign-In with Ethereum, enable DAO Login, and more.
+
+https://blog.spruceid.com/announcing-ssx/
+
+(1/7)",598,301,131
+VitalikButerin,"Sometimes I wish our language had tenses or other markers for levels of epistemic confidence. A one-syllable way to say:
+
+""I believe X because I have mathematical proof""
+""I'm underqualified on this topic, but my feeling is X""
+""My impression from observations so far is X""
+
+etc",7100,1000,3000
+VitalikButerin,"The ""centralized anything is evil by default, use defi and self-custody"" ethos did very well this week, but remember that it too has risks: bugs in smart contract code.
+
+Important to guard against it:
+
+* Keep code simple
+* Audits, formal verification, etc
+* Defense in depth",10000,2100,987
+VitalikButerin,"The one I worry about most is if we have $10B in a ZK-rollup 2y from now and it gets hacked because of a bug in the circuit constraint code or the EVM wrapper around it.
+
+For the latter, keep it simple and formal-verify. For the former, my best ideas are:",1500,229,770
+VitalikButerin,"The current wait time for a US Visitor Visa at the consulate in Mumbai is, and I quote: ""999 calendar days"".
+
+A de facto barrier to lawful international mobility that is absolute and indiscriminate.
+
+More data and helpful maps available at 
+@VisaLimbo",719,277,182
+VitalikButerin,Some happy news for those who missed it: Kherson has been liberated. Ukraine now controls everything west of the Dnieper river.,7000,711,516
+VitalikButerin,"Also, it feels to me like recently nuclear sabre-rattling reduced a lot, and RU statements expressing desperation for a peaceful exit have increased.
+
+https://russian.rt.com/ussr/news/1072660-peskov-specoperaciya-peregovory…
+
+Don't trust them, of course, but still tentative good news for Ukrainians' freedom and for avoiding WW3.",608,122,150
+VitalikButerin,"Social Applied ZK projects on Ethereum:
+
+- Unirep
+- Semaphore
+- 
+@heyanonxyz
+- Interep
+- MACI
+- 
+@Sismo_eth
+ 
+- zkPIN
+- zk-email 
+- zkSBTs
+- iden3 
+
+I know I am missing many more. Comment the projects below.",627,209,99
+VitalikButerin,"I think we have been too complacent because EOA self-custody is good enough for power users, and centralized exchanges looked good enough for unsophisticated users. Turns out, they were and are not.",546,148,63
+VitalikButerin,Vitalik has been actively advocating for account abstraction for years. I believe this should indeed be a priority now. EOA self-custody is too complicated to be viable for many normie users. We need smart contract wallets with strong standards for things like social recovery.,1400,347,115
+VitalikButerin,"1) I'm sorry.  That's the biggest thing.
+
+I fucked up, and should have done better.",52000,19000,9800
+VitalikButerin,"Good luck to the 
+@solana
+ community out there
+
+I hope this is your $80 $ETH moment. 
+
+A strong and committed community is waiting on the other side of this",5800,946,350
+VitalikButerin,"Anti-malaria, pandemic response, mitigating extreme poverty, life extension research, mitigating existential risks (including AI) and thinking about the multimillion-year future of humanity are all very important and undervalued issues and will continue to be for quite a while.",11000,1500,748
+VitalikButerin,"If you make a coin, don't keep the supply for yourself and ""intend"" to give it later. Just issue half straight to GiveWell or OpenPhil or whoever. Don't insert your own friggin fund in the middle, just give it to them.
+
+Much like credible neutrality, try credible benevolence!",2800,345,209
+VitalikButerin,"This is why I recommend all the dog coin / word coin people to not issue tokens to *me*. If you *must* abuse my name, give the supply directly to those orgs and market it as ""X% of supply donated to Vitalik-endorsed charities"". But better just talk about the causes directly.",3500,364,365
+VitalikButerin,"I think the effective altruism community's most underrated weakness is not having a good theory of effectively allocating *social* capital.
+
+Especially if you're well-known, you're not just giving out money, but also reallocating public attention, inspiring the next generation...",1900,140,56
+VitalikButerin,"Great 
+@EthMagicians
+ post by 
+@VitalikButerin
+ defining potential stages of L2 centralizations and potential milestones that teams could use to make it clear to users where they are at",308,175,105
+VitalikButerin,"AI to the Left, Crypto to the Right:
+At this historic moment of 2019, the two most interesting things that will happen to human society in the next two decades are basically clear.
+One is AI, and the other is crypto and blockchain.",724,255,139
+VitalikButerin,"How well this works depends on exactly how much due diligence is done to make sure blue checks are who they say they are. ""Pay $8/month and call yourself whatever"" would damage the blue check's anti-scam role. But if there's more actual verification, the result is very different.",5400,762,857
+VitalikButerin,"I don't get this critique that charging $8/month creates an economic hierarchy. The current blue check system is *far* more exclusive than even the $20/month level from yesterday.
+
+Ideally, though, verification would be charged at-cost and separate from other premium services.",2000,207,313
+VitalikButerin,"Nikolai was one of the earliest community members I came across in my journey into Ethereum and a key reason I stayed.
+
+His passionate eccentricity helped show not only that ideas like stablecoins were possible, but that they could be brought to life (
+@MakerDAO
+).
+
+RIP Nikolai",566,179,147
+VitalikButerin,Should I publicly blab my opinions about crypto regulation more? Feels unfair to let other people get attacked by CT but never actually poke my own head out.,11000,1300,1300
+VitalikButerin,"Regs on defi frontends that *could* be more helpful may include:
+
+(i) limits on leverage
+(ii) requiring transparency about what audits, FV or other security checks were done on contract code
+(iii) usage gated by knowledge-based tests instead of plutocratic net-worth minimum rules",1700,231,192
+VitalikButerin,"Also, I would love to see rules written in such a way that requirements can be satisfied by zero knowledge proofs as much as possible. ZKPs offer lots of new opportunities to satisfy reg policy goals and preserve privacy at the same time, and we should take advantage of this!",2600,487,345
+VitalikButerin,"Basically, especially at this time, regulation that leaves the crypto space free to act internally but makes it harder for crypto projects to reach the mainstream is much less bad than regulation that intrudes on how crypto works internally.",2000,216,78
+VitalikButerin,"The ""KYC on defi frontends"" idea does not seem very pointful to me: it would annoy users but do nothing against hackers. Hackers write custom code to interact with contracts already. Exchanges are clearly a much more sensible place to do the KYC, and that's happening already.",2100,320,108
+VitalikButerin,"I generally don't like subtweeting; it's impolite to people who do not have context. When I tweet a generality instead of just talking about a particular situation directly, I typically have at least two examples in mind.
+
+(And yes, this applies self-referentially)",2000,302,471
+VitalikButerin,"NEW EPISODE
+Join 
+@tw_tter
+ as she chats to 
+@VitalikButerin
+ at  
+@EFDevcon
+ 6 in  about: 
+the state of the network
+if the looming centralization is a threat
+#Ethereum's danksharding plus third party layer 2s 
+How much of an issue MEV is
+
+https://epicenter.tv/episodes/467",350,169,178
+VitalikButerin,"ZK-EVM? Cairo? Kakarot! 
+A ZK-EVM written in Cairo
+
+Join our twitter space tomorrow, featuring:
+
+Vitalik Buterin 
+@VitalikButerin
+Eli Ben-Sasson 
+@EliBenSasson
+Shahar Papini 
+@PapiniShahar
+Abdelhamid Bakhta 
+@dimahledba",2000,676,331
+VitalikButerin,I'm so happy that Ethereum has such a strong culture of trying hard to make all our moon math as understandable and accessible to people as possible.,3500,738,574
+VitalikButerin,"It's necessary if we want to keep our ecosystem open and welcoming to people who did not follow a traditional many-year university math education track.
+
+Decentralization requires NOT giving up and waving a PhD around saying ""it's a black box, we're smart, trust us"".",1600,296,263
+VitalikButerin,This feels like a really important metaphor for something about our present condition.,4700,836,1100
+VitalikButerin,"The Cistercian numerals are a forgotten number system, developed by the Cistercian monastic order in the early thirteenth century, much more compact than Arabic or Roman numerals: with a single character you could write any integer from 1 to 9999 [more: https://buff.ly/2LDj1Kg]",18000,3600,462
+VitalikButerin,"Updates to Blockscan Chat
+
+1. End-to-end encryption (E2EE) 
+2. Contract address sign-in 
+3. Browser notification 
+
+... and more coming soon",959,370,156
+VitalikButerin,Did I do this math proof correctly can my more math inclined mutuals help?,1700,324,284
+VitalikButerin,"The idea (from 
+@ESYudkowsky
+ I believe?) of a country or zone where it's illegal to build most permanent structures, so mobile homes only, to prevent excessive lock-in effects tied to physical space fascinates me.
+
+(Not saying I think it's a good idea, it's just fascinating!)",1500,199,601
+VitalikButerin,"Select replies to my poll on blue checks, selected for... I'm not sure what exactly. But anyway:",874,175,439
+VitalikButerin,Twitter's blue check mechanism is (compared to not having it at all),578,187,639
+VitalikButerin,"Is a ""sidecar"" a piece of software, a data blob that's not in the main RLP or SSZ hash structure, something else?
+
+I've been hearing multiple meanings...",803,176,517
+VitalikButerin,"Honestly, not wanting to be the kind of person who would have owned slaves or been silent about the Holocaust is a key part of my moral drive",203,102,100
+VitalikButerin,"Someone should make a project called ""THE Protocol"", so that their shills can say ""Look, soandso mentioned THE!"" pretty much any time anyone says anything.",4100,1100,1100
+VitalikButerin,"""We are going to enable open order flow. Open order flow means NO proprietary first party deals between users, wallets and builders or validators. These deals have been horrible in tradfi"" - 
+@phildaian",1600,344,194
+VitalikButerin,Lots of people. Many are scared; repression has become very effective over the last 10 years. Some hate what is going on but have no idea what to do and end up leading to sad situations like this:,697,171,142
+VitalikButerin,"An exploration on whether or not we could replace KZG with arithmetic hashes, eg. Poseidon, in EIP-4844 (proto-danksharding):
+
+https://ethresear.ch/t/arithmetic-hash-based-alternatives-to-kzg-for-proto-danksharding-eip-4844/13863…
+
+Summary: yeah it's possible, but there are a lot of tradeoffs.
+
+Thanks 
+@dimahledba
+ for suggesting this topic!",677,229,230
+VitalikButerin,"ATTN: #Tech4Democracy's deadline is extended. Enter your democracy-affirming projects for #VentureDay Bogotá!
+@VitalikButerin
+ will be speaking at the event along w/
+@glenweyl
+.
+@IEuniversity
+, 
+@StateDept
+, 
+@Microsoft
+, 
+@gitcoin
+, 
+@ethereum
+, 
+@Uniandes
+, etc.",212,121,53
+VitalikButerin,"These fancy new arithmetic hash functions look so beautiful - the way cryptography should look. Much cleaner than SHA256.
+
+Looking forward to see these functions get more battle tested and reviewed and start to get more widely adopted over time.",4900,739,548
+VitalikButerin,"Reinforced Concrete is fun too.
+
+The BARS permutation is a bit ugly, but I guess it's hard to come up with something really clean when you're trying to define a non-arithmetic computation over arbitrary prime fields :(
+
+https://eprint.iacr.org/2021/1038.pdf",476,131,128
+VitalikButerin,Crypto bots are the worst. Fake Vitaliks are all around me,4900,362,606
+VitalikButerin,"Today 
+@SECGov
+, we charged Kim Kardashian for unlawfully touting a crypto security.
+
+This case is a reminder that, when celebrities / influencers endorse investment opps, including crypto asset securities, it doesn’t mean those investment products are right for all investors.",11000,4800,4300
+VitalikButerin,"Account abstraction: New version of ERC 4337 released!
+
+https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4337.md…
+
+Added signature aggregation.  The implementation now includes BLS.
+@drortirosh
+ @VitalikButerin",478,209,2800
+VitalikButerin,"So many scam accounts have blue checkmarks these days.
+
+Seems like a complete failure of blue checkmarks in their current form. I'm definitely seeing the wisdom of turning twitter into an open API and letting third parties try to make the best UIs to solve these problems.",12000,1900,1300
+VitalikButerin,How much can we constrain builders without bringing back heavy burdens to block proposers?,847,239,205
+VitalikButerin,не дай бог программисты к власти придут тогда появится родитель номер 0,13000,656,139
+VitalikButerin,"How long until there's a scandal related to water, and some writer calls it ""Watergate"" because that's the correct default modern English-language way to create a name for a scandal, without even realizing what they just did there?",3900,472,785
+VitalikButerin,"I think editing should be available, but when you edit a tweet, the portion that was edited should become highlighted. Would not interfere with typo fixes etc, but would be more likely to prevent attempts to abuse the feature. https://x.com/premium/status/premium/status/1575590534529556480…",2400,337,371
+VitalikButerin,"I built a basic implementation of a SNARK (PLONK) compiler, prover and verifier in python:
+
+https://github.com/ethereum/research/tree/master/py_plonk…
+
+Intended primarily for educational value, and for simple inputs it can exactly reproduce verification keys generated by https://zkrepl.dev",2100,331,156
+VitalikButerin,"Big thanks to 
+@jbaylina
+ @gubsheep
+ for help!",399,114,47
+VitalikButerin,Is the current global order deeply capitalist or deeply statist?,783,293,597
+VitalikButerin,I want to someday do an ethereum conference at the top of a 1km mountain with no car access. Wonder what kind of attendees and discussion that filter would lead to.,3200,382,702
+VitalikButerin,"I don't know how ""horseshoe theory is false"" ever managed to become such an unquestioned Very Serious Person meme. There are clearly many common traits in extremists on all sides that come from attraction to extremeness itself, which lead to lots of agreement on tangential issues",546,129,118
+VitalikButerin,"Think of the one person in the world who is the most ideologically aligned with you.
+
+On what percentage of issues that are important to you do they share your view?",1000,242,670
+VitalikButerin,"People whose primary vibe is ""I and my tribe are domain-expertise-endowed professionals, the people I criticize and mock are amateurs, and you should shut up"" are really really uncool, and people should recognize the pattern and immediately unfollow anyone who exhibits it.",12000,1600,1300
+VitalikButerin,"The main exception is of course that if you find someone who has this vibe, and they accidentally demonstrate a big and relevant error in domain knowledge themselves, then it's okay to flip over your own domain expertise cards as part of exposing their hypocrisy.",1700,143,227
+VitalikButerin,DAOs are not corporations: where decentralization in autonomous organizations matters,3200,1100,472
+VitalikButerin,“it’s a politically meaningful act to have a personal website”,680,175,38
+VitalikButerin,"I try to explain the additive vs multiplicative notation issue for elliptic curves, and get a little bit into the question of what to do with the GT group.",1100,249,485
+VitalikButerin,It's also the anniversary of the 2016 Shanghai DoS attacks.,1200,386,294
+VitalikButerin,"Thread by 
+@davidgerard
+, criticizing 
+@VitalikButerin
+.",2300,300,690
+VitalikButerin,The thing you do with lots of elliptic curve points and lots of scalars,990,254,678
+VitalikButerin,"What kind of layer 3s make sense?
+
+https://vitalik.ca/general/2022/09/17/layer_3.html…",4000,1100,741
+VitalikButerin,"Normalize saying ""dub"" (instead of ""double-yoo"") as the name of the letter W.
+
+All letters deserve a one-syllable name.",11000,1500,2100
+VitalikButerin,"This is an important disconnect that people building in the crypto space do need to be aware of. Crypto-wealthy people often join DAOs for tribal affiliation and fun and self-expression, but our long-term target audience wants DAOs designed around very pragmatic needs.",3900,722,563
+VitalikButerin,"""Rich people are grubby power trippers"" is an overrated frame. ""Rich people wanna have fun"" is an often more accurate frame that explains well why there are rich/poor misalignments even among good people.",1300,182,176
+VitalikButerin,Grubby power trippers of course exist and continue to be a big problem. In business and in politics.,1100,181,146
+VitalikButerin,"Modern rich-country elite politics is not about economics, it's about vibes, exhibit #247.
+
+(Poor countries and even non-elites in rich countries definitely operate this way much less. They can't afford to)",1300,278,268
+VitalikButerin,"My favorite speech at SBC was no surprise - 
+@VitalikButerin
+’s Decentralizing the Builder Role
+
+I break down and analyze distributed builders
+
+Huge thanks to 
+@VitalikButerin
+ @sreeramkannan
+ @bertcmiller
+ and 
+@thegostep
+ for your review and input!
+
+https://joncharbonneau.substack.com/p/decentralizing-the-builder-role?sd=pf…",508,219,65
+VitalikButerin,"Ethereum creator 
+@VitalikButerin
+ joined the Kyiv Tech Summit to provide his support to hackers on the ground floor building the humanitarian tools of tomorrow.
+
+He also spoke on a panel with 
+@abornyakov
+ about the future of Web3 in Ukraine.",1500,349,131
+VitalikButerin,"Big thanks to @KyivTechSummit and everyone involved for the opportunity to visit!
+
+An amazing and brave community in Ukraine that we all have a lot to learn from.",2700,507,284
+VitalikButerin,"Today, we announced that 
+@Coinbase
+ is funding and supporting a lawsuit by six individuals against the Treasury Department’s sanctions of Tornado Cash’s smart contracts, an open source piece of software. You can read more about the details here: https://blog.coinbase.com/defending-privacy-in-crypto-e09db33dece8…",3400,878,245
+VitalikButerin,One thing that people don't appreciate enough about land taxes (and even property taxes) is that the existence of the tax means the property is much cheaper for you to acquire in the first place. You can put the difference into stocks and pay the tax out of the price gains.,7500,1100,1300
+VitalikButerin,Vitalik Buterin is worse than a communist,426,82,88
+VitalikButerin,"Using climate as an ""opportunity"" to go after people with the wrong vibez is harmful to the cause of mitigating climate change.",1500,176,167
+VitalikButerin,Should there be demand-based recurring fees on ENS domains?,2100,538,781
+VitalikButerin,"Second update from Balvi! 
+
+Lots more anti-covid projects funded, thanks to funds from 
+@Shibtoken
+ @CryptoRelief_
+!
+
+Previous update here:",3400,1000,306
+VitalikButerin,Masks that actually look really cool:,321,115,77
+VitalikButerin,"@OpenAeros
+, making better masks and testing them:",300,99,118
+VitalikButerin,"First, should you still care about covid?
+
+I've seen the full spectrum of opinions from very smart people. I'd say it's not worth overturning our lives over it, but there are plenty of signs that this thing is a tier more dangerous than the cold/flu and we should not ignore it.",343,28,24
+VitalikButerin,"Bellatrix activated! 
+Next stop: the merge
+See you on the other side",5600,1500,366
+VitalikButerin,"The merge is still expected to happen around Sep 13-15. What's happening today is the Bellatrix hard fork, which *prepares* the chain for the merge. Still important though - make sure to update your clients!",21000,4600,1500
+VitalikButerin,"OK wow, half of yall literally think that someone should be able to lock down every five-letter word in the Scrabble dictionary (which includes exotic stuff like ""ZORIL"") for a hundred years for less than the price of four lambos.",2200,356,749
+VitalikButerin,"Quantum computers break:
+
+* RSA and anything based on factoring
+* Elliptic curves
+* Unknown order groups
+
+Quantum computers don't break:
+
+* Hashes
+* Lattices",1300,342,170
+VitalikButerin,"Many of you got this one very wrong btw. Quantum computers with Shor's algorithm break elliptic curves completely. Hashes (like SHA256) survive quantum computers just fine, though security degrades somewhat and longer hash lengths become recommended.",2500,426,419
+VitalikButerin,What is a fair price that someone should have to pay to register and unconditionally guarantee ownership of a 5-letter .eth domain for 100 years?,2000,574,1000
+VitalikButerin,My interview with Vitalik Buterin is out!,1400,380,179
+VitalikButerin,Does P = NP? Do you believe in god?,2100,510,1300
+VitalikButerin,"Assuming quantum computers turn out to be impractical, which security assumption do you think is more likely to still hold in the year 3000?
+
+(By ""hold"", let's say I mean ""takes more than 2^100 computational steps to crack"")",1100,326,487
+VitalikButerin,Best wishes to ETHWarsaw hackers!,1300,224,302
+VitalikButerin,"Disagree with ""spend money"", frugality is undervalued in elite circles imo. Having low expenses and having a 1 year savings cushion from early on helps a lot in preserving your freedom and reducing stress.",2300,291,277
+VitalikButerin,"""Proof of Stake"", the (physical and digital) book compiling various writings I've made over the last ~10 years, will be out in a month!
+
+You can get a signed digital copy and NFT here: https://proofofstake.gitcoin.co
+
+My share of the proceeds all goes to 
+@gitcoin
+ grants public goods!",11000,2800,1000
+VitalikButerin,"Thanks to 
+@7StoriesPress
+ @ntnsndr
+ for publishing and organizing!",750,127,149
+VitalikButerin,"Yarvin on DAOs:
+
+https://graymirror.substack.com/p/optimal-autonomous-organizations…
+
+I agree with some parts and find the sovereign vs contractual distinction valuable, but disagree with other parts: my views on DAO design are more context-dependent. I may write on this more in the future.
+
+I appreciate the contribution!",988,264,206
+VitalikButerin,"""All Gorbachev's reforms have been reduced to zero, dust, smoke,"" 
+@aavst20551
+ said in July. ""This was his life's work [...] Freedom of speech, private property – that was Mikhail Sergeyevich Gorbachev. So what's he going to say now?""",407,174,62
+VitalikButerin,"This is it: The Merge is coming.
+
+UPGRADE YOUR  CLIENTS! 
+
+https://blog.ethereum.org/2022/08/24/mainnet-merge-announcement/…
+
++ More",1800,822,285
+VitalikButerin,"Exactly 6 months have now passed since this Russian soldier forced his way into Ukraine at a border post in the first official act of aggression by the Russian Army against Ukraine in this war.
+
+There is no end to the war on the horizon. The West must remain determined to aid !",2000,428,116
+VitalikButerin,"If I had to make a bear case for Anglo civilization, this would be it.
+
+Picked the wrong answer with more than a 2:1 ratio. Sorry guys, yall are ngmi.",3000,556,1100
+VitalikButerin,"""X sounds great, mandatory X sounds horrifying"" for many values of X.
+
+It's almost like the whole ""freedom"" meme has a really important purpose to it!",434,133,104
+VitalikButerin,"Sometimes nuance is a needed corrective to extremist simplicity, but sometimes nuance is a DoS attack, obscuring our ability to recognize and agree on truths that are really important and actually quite simple.
+
+This is the most important nuance about nuance.",927,240,464
+VitalikButerin,"Regular reminder to people trying to make things better:
+
+It is not your responsibility to solve every problem.",18000,3000,1600
+VitalikButerin,你上次喝茶或者咖啡，你喝哪个？,1400,372,1100
+VitalikButerin,"В последний раз когда ты пил чай или кофе, ты пил какой из них?",549,139,427
+VitalikButerin,"Agreeing with the proverb ""those who most want to rule people are those least suited to do it"" and supporting DAOs being run by transferable governance tokens is a contradiction.
+
+Transferable governance tokens are all about giving *more* power to ""those who most want to rule"".",7500,1400,1000
+VitalikButerin,"Sometimes the task of an intellectual isn't about trying to outsmart everyone or come up with the synthesis to the world's thesis and antithesis or whatever.
+
+Rather, it's about knowing when to just reaffirm simple dumb rules like ""invading people bad"".",2000,338,395
+VitalikButerin,"Also an important lesson for the crypto space. Way too much mental gymnastics goes into defending things that a 12 year old applying a simple unnuanced ""if it offers 20% APR it's a Ponzi"" rule would correctly reject every time.",1500,221,244
+VitalikButerin,"Merge + surge + verge + purge + splurge are not stages!
+
+They are all happening in parallel.",3800,998,494
+VitalikButerin,"Vyper is quietly continuing to progress and become a better and better Ethereum high-level language.
+
+https://vyper.readthedocs.io/en/stable/
+
+https://vyper-by-example.org
+
+Great and hardworking team 
+@vyperlang
+ and many community contributors.",4100,894,566
+VitalikButerin,"Proposals to adjust memory gas costs
+
+Doc: https://notes.ethereum.org/@vbuterin/proposals_to_adjust_memory_gas_costs…
+
+EthMag thread for discussion: https://ethereum-magicians.org/t/proposals-to-adjust-memory-gas-costs/10036…",2200,544,526
+VitalikButerin,".
+@vita_dao
+ is excited to announce ""The Longevity Prize"" in collaboration with 
+@foresightinst
+ and 
+@mfoundation
+ - a crowdsourced longevity prize to unlock progress in longevity research.   
+
+https://longevityprize.com",673,327,281
+VitalikButerin,"Also, BitTrex should make its branding more dinosaur-themed.",3700,567,851
+VitalikButerin,"Lots of responses around consumer sentiment and investor sentiment so far, but relatively little around worker sentiment.
+
+Surely worker sentiment is the most important here? The morale of the people actually producing stuff?",2300,419,765
+VitalikButerin,"It's amazing how some PoW proponents just keep repeating the unmitigated bare-faced lie that PoS includes voting on protocol parameters (it doesn't, just like PoW doesn't) and this so often just goes unchallenged.
+
+Nodes reject invalid blocks, in PoS and in PoW. It's not hard.",3700,598,517
+VitalikButerin,"Also, small grammar nuance: in English when talking about things like proof of stake, we don't say ""it's a security"", we say ""it's secure"". I know these suffixes are hard though, so I forgive the error.",2900,327,362
+VitalikButerin,An underrated reason to use public blockchains is precisely the fact that the infrastructure has been so relentlessly stress tested against all kinds of attacks.,1900,328,305
+VitalikButerin,"Motivation truly is important. You can keep going longer and focus harder on the mission if you can internally narrativize your intellectual life as a glorious search for freedom, enfranchisement of the weak, human progress, etc. Such energies can't be thrown away completely.",1000,189,199
+VitalikButerin,"IMO 
+@bryan_caplan
+ does this well. Very passionate libertarian, but he puts his biggest focus on libertarian ideas where he can come up with lots of evidence that they could actually do a lot of good for people. Open borders, housing reform, worrying less about education...",494,56,128
+VitalikButerin,There's a lot to be learned from this approach. Commit yourself to a direction that still leaves you lots of freedom to maneuver as you get more data and realize you were wrong about specific things.,782,180,189
+VitalikButerin,"... because there are other options. A particularly important option is ""data-driven choice of idea-driven ideas"". Ideology generates hypotheses and provides motivation, but then you check them against reality, and be prepared to dismiss or de-emphasize some as a result.",410,58,109
+VitalikButerin,"I just remembered a conversation with 
+@AnthonyLeeZhang
+ from pre-covid times on the role of ideology in an intellectual's thinking.
+
+The dichotomy of ""idea-driven ideas"" vs ""data-driven ideas"". Framed this way, ideology looks bad, but actually it's not so simple...",1100,190,884
+VitalikButerin,"The first law of tokenomics: don't get your tokenomics advice from people who use the word ""tokenomics""",1700,333,217
+VitalikButerin,"Ethereum Foundation Research AMA is open NOW on Reddit!
+
+#Ethereum #AMA",363,272,164
+VitalikButerin,How games are way harder (and often impossible) to stabilize once you take away the individual choice assumption.,654,144,159
+VitalikButerin,Decline of formal attire is an underrated form of social progress.,9700,1200,1100
+VitalikButerin,The endgame is for plain-colored T-shirts and sweaters to pass as formal. Basically the Star Trek future.,3600,337,382
+VitalikButerin,"Narratives podcast 100th episode spectacular featuring 
+@VitalikButerin
+! 
+@willdjarvis
+ and I talk land value tax, governance, and philosophy of crypto protocol design!
+
+https://willjarvis.substack.com/p/100-vitalik-buterin-governance-political#details…",334,116,117
+VitalikButerin,"Correction: I hold *ethereum* to a higher standard.
+
+Random scammy centralized chains can do whatever they want, they'll have to answer for that themselves
+
+(though I reserve the right to use them as examples of what I stand against, much as I do with centralized institutions)",1900,380,466
+VitalikButerin,"A doc on a possible path to build on our account abstraction work with ERC-4337 (and ERC-3074 if desired) and add more protocol-enshrined features to make abstraction the default over time.
+
+https://notes.ethereum.org/@vbuterin/account_abstraction_roadmap…
+
+Thanks for comments 
+@yoavw
+ @adietrichs
+ @lightclients
+!",1200,345,489
+VitalikButerin,"There are far more honorable ways to burn $50m to impress people than buying a superyacht.
+
+Like becoming a 
+@gitcoin
+ grants matching partner! Here are the matching partners for the current round:",7200,1200,998
+VitalikButerin,"As a frontier social movement, we're supposed to be trying to execute on visions like this, not just repeating unimaginative 20th century crap except with ourselves at the top.",1400,199,173
+VitalikButerin,"@OptiPunk
+ deserves praise imo. Cryptopunk NFTs, but with revenue going to supporting public goods. We should make a directory of other projects that are like this, so we can do more to support them!",1400,313,409
+VitalikButerin,"Stock-to-flow is really not looking good now.
+
+I know it's impolite to gloat and all that, but I think financial models that give people a false sense of certainty and predestination that number-will-go-up are harmful and deserve all the mockery they get.",8700,1800,1400
+VitalikButerin,Remember who supported S2F and who mocked it even back when it looked like it was accurately describing the trendline.,2000,190,941
+VitalikButerin,"My 40-liter backpack travel guide:
+
+https://vitalik.ca/general/2022/06/20/backpack.html…",4400,1000,1100
+VitalikButerin,"Huge shoutout to Mofi from 
+@OPLabsPBC
+ and Michael from 
+@coinbase
+ on demoing a working end-to-end upload/download test of blob transactions on a post-merge 4844 devnet! https://github.com/Inphi/eip4844-interop…",528,183,162
+VitalikButerin,"AI may well be built by shape rotators, but the current iteration of the stuff seems to be the ultimate wordcel.",1000,219,289
+VitalikButerin,"I've been thinking about *why* this is true, and I might have an explanation. Basically, I think it comes down to a confusion between terminal goals (""the things we ultimately want"") and our strategies for achieving them...",1100,177,226
+VitalikButerin,"Another confusing one is ""economic growth"", which often gets construed as individualistic, but there are plenty of collective, and occasionally even freedom-sacrificing, ways of making it happen.
+
+(Economic growth is really important BTW. See https://amazon.com/Stubborn-Attachments-Prosperous-Responsible-Individuals/dp/1732265135… )",318,59,93
+VitalikButerin,"Summary: the ""things we ultimately want"" aren't individual or collective, but ""strategies for achieving them"" can be either one or a mix of the two.
+
+Even strategies for protecting freedom can be collective (defending against aggressive wars, to give an obvious example).",478,114,116

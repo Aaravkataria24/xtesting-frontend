@@ -8,13 +8,15 @@ export type PredictionResult = {
 export type SplitTestResult = {
   prediction1: PredictionResult;
   prediction2: PredictionResult;
-  winner: string;
+  winner: 'tweet1' | 'tweet2';
 };
+
+const API_URL = 'https://xtesting-api.onrender.com';
 
 export const predictSingleTweet = async (
   tweet: string
 ): Promise<PredictionResult> => {
-  const response = await fetch('https://xtesting-api.onrender.com/predict/single', {
+  const response = await fetch(`${API_URL}/predict/single`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -23,18 +25,17 @@ export const predictSingleTweet = async (
   });
 
   if (!response.ok) {
-    throw new Error('Failed to predict tweet');
+    throw new Error(`Failed to predict tweet (status ${response.status})`);
   }
 
-  // 🔥 FIX: Match FastAPI's return structure { prediction: { ... } }
   const data = await response.json();
-  const { likes, retweets, replies, engagement_score } = data.prediction;
+  const prediction = data.prediction;
 
   return {
-    likes,
-    retweets,
-    replies,
-    engagementScore: engagement_score,
+    likes: prediction.likes,
+    retweets: prediction.retweets,
+    replies: prediction.replies,
+    engagementScore: prediction.engagement_score,
   };
 };
 
@@ -42,7 +43,7 @@ export const predictSplitTest = async (
   tweet1: string,
   tweet2: string
 ): Promise<SplitTestResult> => {
-  const response = await fetch('https://xtesting-api.onrender.com/predict/split', {
+  const response = await fetch(`${API_URL}/predict/split`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -51,29 +52,24 @@ export const predictSplitTest = async (
   });
 
   if (!response.ok) {
-    throw new Error('Failed to predict split test');
+    throw new Error(`Failed to predict split test (status ${response.status})`);
   }
 
   const data = await response.json();
-  const {
-    tweet1: prediction1,
-    tweet2: prediction2,
-    better_tweet: winner,
-  } = data;
 
   return {
     prediction1: {
-      likes: prediction1.likes,
-      retweets: prediction1.retweets,
-      replies: prediction1.replies,
-      engagementScore: prediction1.engagement_score,
+      likes: data.tweet1.likes,
+      retweets: data.tweet1.retweets,
+      replies: data.tweet1.replies,
+      engagementScore: data.tweet1.engagement_score,
     },
     prediction2: {
-      likes: prediction2.likes,
-      retweets: prediction2.retweets,
-      replies: prediction2.replies,
-      engagementScore: prediction2.engagement_score,
+      likes: data.tweet2.likes,
+      retweets: data.tweet2.retweets,
+      replies: data.tweet2.replies,
+      engagementScore: data.tweet2.engagement_score,
     },
-    winner,
+    winner: data.better_tweet,
   };
 };

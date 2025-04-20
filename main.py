@@ -1,32 +1,52 @@
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import pickle
+from transformers import AutoTokenizer, AutoModel
+import torch
 import numpy as np
+import joblib
 import uvicorn
 
-# Load vectorizer and models
-with open("tfidf_vectorizer.pkl", "rb") as f:
-    vectorizer = pickle.load(f)
+# Constants
+MODEL_PATH = "finetuned_twitter_roberta_multi.pt"
+REGRESSOR_PATH = "regressor_model.pkl"
+BASE_MODEL = "cardiffnlp/twitter-roberta-base"
 
-with open("likes_model.pkl", "rb") as f:
-    likes_model = pickle.load(f)
+# Device setup
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-with open("retweets_model.pkl", "rb") as f:
-    retweets_model = pickle.load(f)
+# Load tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL)
+roberta = AutoModel.from_pretrained(BASE_MODEL)
 
-with open("replies_model.pkl", "rb") as f:
-    replies_model = pickle.load(f)
+class RobertaRegressionHead(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.roberta = roberta
+        self.dropout = torch.nn.Dropout(0.2)
+        self.regressor = torch.nn.Linear(self.roberta.config.hidden_size, 3)
 
+    def forward(self, input_ids, attention_mask):
+        outputs = self.roberta(input_ids=input_ids, attention_mask=attention_mask)
+        cls_output = outputs.last_hidden_state[:, 0, :]
+        x = self.dropout(cls_output)
+        return self.regressor(x)
+
+model = RobertaRegressionHead().to(device)
+model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+model.eval()
+
+# Load regressor
+regressor = joblib.load(REGRESSOR_PATH)
+
+# FastAPI app setup
 app = FastAPI()
-
-# CORS setup
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",           # local dev
-        "https://xtester.netlify.app",      # deployed frontend
-        "https://xtesting.aaravkataria.com", # my website
+        "http://localhost:5173",
+        "https://xtester.netlify.app",
+        "https://xtesting.aaravkataria.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -41,54 +61,48 @@ class SplitTestInput(BaseModel):
     tweet1: str
     tweet2: str
 
-# Prediction logic with logging
-def predict_metrics(text):
+# Embedding + Prediction
+@torch.no_grad()
+def get_prediction(text):
     print(f"\n🔍 Predicting for tweet: {text}")
-    X = vectorizer.transform([text])
-    print(f"✅ TF-IDF vector shape: {X.shape}")
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True, max_length=128).to(device)
+    outputs = model.roberta(**inputs)
+    embedding = outputs.last_hidden_state[:, 0, :].cpu().numpy()
+    prediction = regressor.predict(embedding)[0]
+    prediction_exp = np.expm1(prediction).astype(int)
 
-    likes = int(likes_model.predict(X)[0])
-    retweets = int(retweets_model.predict(X)[0])
-    replies = int(replies_model.predict(X)[0])
-    engagement_score = likes + retweets + replies
-
-    print(f"✅ Predicted - Likes: {likes}, Retweets: {retweets}, Replies: {replies}, Engagement Score: {engagement_score}")
-
-    return {
-        "likes": likes,
-        "retweets": retweets,
-        "replies": replies,
-        "engagement_score": engagement_score
+    result = {
+        "likes": int(prediction_exp[0]),
+        "retweets": int(prediction_exp[1]),
+        "replies": int(prediction_exp[2]),
+        "engagement_score": int(np.sum(prediction_exp))
     }
+    print(f"✅ Prediction: {result}")
+    return result
 
-# Single tweet prediction route
+# API routes
 @app.post("/predict/single")
-def single_prediction(input: TweetInput):
+def predict_single(input: TweetInput):
     try:
-        result = predict_metrics(input.text)
-        return { "prediction": result }
+        return {"prediction": get_prediction(input.text)}
     except Exception as e:
-        print(f"❌ Error in single_prediction: {e}")
+        print(f"❌ Error in predict_single: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-# Split test prediction route
 @app.post("/predict/split")
-def split_test(input: SplitTestInput):
+def predict_split(input: SplitTestInput):
     try:
-        result1 = predict_metrics(input.tweet1)
-        result2 = predict_metrics(input.tweet2)
-
-        winner = "tweet1" if result1["engagement_score"] > result2["engagement_score"] else "tweet2"
-
+        pred1 = get_prediction(input.tweet1)
+        pred2 = get_prediction(input.tweet2)
+        winner = "tweet1" if pred1["engagement_score"] > pred2["engagement_score"] else "tweet2"
         return {
-            "tweet1": result1,
-            "tweet2": result2,
+            "tweet1": pred1,
+            "tweet2": pred2,
             "better_tweet": winner
         }
     except Exception as e:
-        print(f"❌ Error in split_test: {e}")
+        print(f"❌ Error in predict_split: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-# Local testing
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
