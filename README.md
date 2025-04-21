@@ -52,7 +52,7 @@ uvicorn main:app --reload
 ```
 The backend will run at http://127.0.0.1:8000.
 
-# Project Structure
+# Project Structure (outdated, to be updated)
 ```
 xtesting/
 ├── main.py                  # FastAPI backend
