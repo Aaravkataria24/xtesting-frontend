@@ -1,0 +1,8 @@
+fastapi
+pydantic
+transformers
+torch
+numpy
+joblib
+uvicorn
+os
