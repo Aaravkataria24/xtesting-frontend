@@ -62,7 +62,7 @@ starlette==0.46.1
 sympy==1.13.3
 threadpoolctl==3.6.0
 tokenizers==0.21.1
-torch==2.2.2
+torch==2.5.1
 tqdm==4.67.1
 transformers==4.51.3
 trio==0.29.0
