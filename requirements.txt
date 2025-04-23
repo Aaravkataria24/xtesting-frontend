@@ -59,7 +59,7 @@ snscrape==0.7.0.20230622
 sortedcontainers==2.4.0
 soupsieve==2.6
 starlette==0.46.1
-sympy==1.13.3
+sympy==1.13.1
 threadpoolctl==3.6.0
 tokenizers==0.21.1
 torch==2.5.1
