@@ -48,6 +48,7 @@ app.add_middleware(
         "http://localhost:5173",
         "https://xtester.netlify.app",
         "https://xtesting.aaravkataria.com",
+        # Add your Google Cloud frontend URL when available
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -67,19 +68,23 @@ class SplitTestInput(BaseModel):
 def get_prediction(text):
     print(f"\n🔍 Predicting for tweet: {text}")
     inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True, max_length=128).to(device)
-    outputs = model.roberta(**inputs)
-    embedding = outputs.last_hidden_state[:, 0, :].cpu().numpy()
-    prediction = regressor.predict(embedding)[0]
+    outputs = model(**inputs)
+    prediction = outputs.cpu().numpy()
     prediction_exp = np.expm1(prediction).astype(int)
 
     result = {
-        "likes": int(prediction_exp[0]),
-        "retweets": int(prediction_exp[1]),
-        "replies": int(prediction_exp[2]),
+        "likes": int(prediction_exp[0][0]),
+        "retweets": int(prediction_exp[0][1]),
+        "replies": int(prediction_exp[0][2]),
         "engagement_score": int(np.sum(prediction_exp))
     }
     print(f"✅ Prediction: {result}")
     return result
+
+# Health check endpoint for Cloud Run
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
 
 # API routes
 @app.post("/predict/single")
@@ -106,5 +111,5 @@ def predict_split(input: SplitTestInput):
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))  # Cloud Run sets PORT=8080
-    uvicorn.run("main:app", host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 8080))  # Use 8080 instead of 8000 for Google Cloud
+    uvicorn.run("main:app", host="0.0.0.0", port=port, log_level="info")

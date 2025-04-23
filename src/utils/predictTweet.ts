@@ -11,7 +11,7 @@ export type SplitTestResult = {
   winner: 'tweet1' | 'tweet2';
 };
 
-const API_URL = 'https://xtesting-api.onrender.com';
+const API_URL = 'https://xtesting-backend-778458658513.us-central1.run.app';
 
 export const predictSingleTweet = async (
   tweet: string
