@@ -5,6 +5,11 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { TweetPredictionRequest } from '@/lib/api';
 import { AtSign, Hash, Quote, BarChart2, Link, Video, Image, Copy, X, Clock, BarChart3 } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { CalendarIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { format } from "date-fns";
 
 interface TweetInputBlockProps {
   onPredict: (data: TweetPredictionRequest) => void;
@@ -20,7 +25,7 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
   const [hasCryptoMention, setHasCryptoMention] = useState(false);
   const [isQuoting, setIsQuoting] = useState(false);
   const [hasPoll, setHasPoll] = useState(false);
-  const [timePosted, setTimePosted] = useState(new Date().toISOString().slice(0, 16));
+  const [timePosted, setTimePosted] = useState(new Date());
 
   const handlePredict = () => {
     if (!text.trim()) return;
@@ -33,7 +38,7 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
       has_crypto_mention: hasCryptoMention,
       is_quoting: isQuoting,
       has_poll: hasPoll,
-      time_posted: new Date(timePosted).toISOString(),
+      time_posted: timePosted.toISOString(),
     };
     onPredict(data);
   };
@@ -47,12 +52,24 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
     setHasCryptoMention(false);
     setIsQuoting(false);
     setHasPoll(false);
-    setTimePosted(new Date().toISOString().slice(0, 16));
+    setTimePosted(new Date());
   };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(text);
   };
+
+  // Generate time options for the select
+  const timeOptions = Array.from({ length: 24 * 2 }, (_, i) => {
+    const hour = Math.floor(i / 2);
+    const minute = i % 2 === 0 ? '00' : '30';
+    const period = hour >= 12 ? 'PM' : 'AM';
+    const displayHour = hour % 12 || 12;
+    return {
+      value: `${hour.toString().padStart(2, '0')}:${minute}`,
+      label: `${displayHour}:${minute} ${period}`
+    };
+  });
 
   const toggleButton = (active: boolean, onClick: () => void, icon: JSX.Element, label: string) => (
     <Button
@@ -119,22 +136,51 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
           <div className="flex-1 w-full">
             <Label htmlFor="time-posted">Schedule for:</Label>
             <div className="flex items-center gap-2 mt-1">
-              <Clock className="w-5 h-5 text-gray-400" />
-              <Input
-                id="time-posted"
-                type="datetime-local"
-                value={timePosted}
-                onChange={(e) => setTimePosted(e.target.value)}
-                className="bg-gray-50 border border-gray-200 focus:border-gray-400 focus:ring-0 rounded-xl"
-              />
+              <Select
+                value={format(timePosted, 'HH:mm')}
+                onValueChange={(value) => {
+                  const [hours, minutes] = value.split(':').map(Number);
+                  const newDate = new Date(timePosted);
+                  newDate.setHours(hours, minutes);
+                  setTimePosted(newDate);
+                }}
+              >
+                <SelectTrigger className="w-28 bg-gray-50 border border-gray-200 focus:border-black focus:ring-0 rounded-xl text-black placeholder:text-gray-400" style={{ width: '7rem' }}>
+                  <SelectValue placeholder="Select time" className="!text-black placeholder:text-gray-400" />
+                </SelectTrigger>
+                <SelectContent 
+                  className="w-28 text-black border-black focus:border-black focus:ring-0" 
+                  style={{ width: '7rem', borderColor: 'black', boxShadow: '0 0 0 2px black' }}
+                >
+                  {timeOptions.map((option) => (
+                    <SelectItem
+                      key={option.value}
+                      value={option.value}
+                      className="!text-black data-[state=checked]:bg-transparent data-[state=checked]:!text-black data-[highlighted]:bg-gray-200 data-[highlighted]:!text-black"
+                    >
+                      <span className="w-full flex items-center">{option.label}</span>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </div>
         </div>
         <div className="flex gap-2 mt-4">
-          <Button type="button" variant="outline" onClick={handleClear} className="flex items-center gap-2">
+          <Button 
+            type="button" 
+            variant="outline" 
+            onClick={handleClear} 
+            className="flex items-center gap-2 border-black hover:bg-black hover:text-white"
+          >
             <X className="w-4 h-4" /> Clear
           </Button>
-          <Button type="button" variant="outline" onClick={handleCopy} className="flex items-center gap-2">
+          <Button 
+            type="button" 
+            variant="outline" 
+            onClick={handleCopy} 
+            className="flex items-center gap-2 border-black hover:bg-black hover:text-white"
+          >
             <Copy className="w-4 h-4" /> Copy
           </Button>
           <Button
