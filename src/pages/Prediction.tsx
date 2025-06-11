@@ -1,130 +1,175 @@
-
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import TweetInputBlock from '@/components/TweetInputBlock';
-import PredictionResults from '@/components/PredictionResults';
+import { TweetInputBlock } from '@/components/TweetInputBlock';
+import { PredictionResults } from '@/components/PredictionResults';
+import { predictTweet, getQualityMetrics, TweetPredictionRequest } from '@/lib/api';
+import { useToast } from '@/hooks/use-toast';
 
-const Prediction = () => {
-  const [singleResults, setSingleResults] = useState(null);
-  const [splitResultsA, setSplitResultsA] = useState(null);
-  const [splitResultsB, setSplitResultsB] = useState(null);
-  const [splitDataA, setSplitDataA] = useState(null);
-  const [splitDataB, setSplitDataB] = useState(null);
-
-  const generateMockPrediction = () => {
-    const qualities = [
-      { quality: 'Very Bad', color: 'bg-red-500 text-white' },
-      { quality: 'Bad', color: 'bg-orange-500 text-white' },
-      { quality: 'Good', color: 'bg-emerald-500 text-white' },
-      { quality: 'Very Good', color: 'bg-blue-500 text-white' },
-      { quality: 'Excellent', color: 'bg-purple-500 text-white' }
-    ];
-
-    const getRandomQuality = () => qualities[Math.floor(Math.random() * qualities.length)];
-
-    return {
-      likes: { value: Math.floor(Math.random() * 10000), ...getRandomQuality() },
-      retweets: { value: Math.floor(Math.random() * 5000), ...getRandomQuality() },
-      replies: { value: Math.floor(Math.random() * 2000), ...getRandomQuality() },
-      engagement: { value: Math.floor(Math.random() * 100), ...getRandomQuality() }
+export default function Prediction() {
+  const [singleResults, setSingleResults] = useState<{
+    likes: number;
+    retweets: number;
+    replies: number;
+    quality: {
+      likes: { value: number; quality: string; color: string };
+      retweets: { value: number; quality: string; color: string };
+      replies: { value: number; quality: string; color: string };
+      engagement: { value: number; quality: string; color: string };
     };
+  } | null>(null);
+  const [splitResultsA, setSplitResultsA] = useState<{
+    likes: number;
+    retweets: number;
+    replies: number;
+    quality: {
+      likes: { value: number; quality: string; color: string };
+      retweets: { value: number; quality: string; color: string };
+      replies: { value: number; quality: string; color: string };
+      engagement: { value: number; quality: string; color: string };
+    };
+  } | null>(null);
+  const [splitResultsB, setSplitResultsB] = useState<{
+    likes: number;
+    retweets: number;
+    replies: number;
+    quality: {
+      likes: { value: number; quality: string; color: string };
+      retweets: { value: number; quality: string; color: string };
+      replies: { value: number; quality: string; color: string };
+      engagement: { value: number; quality: string; color: string };
+    };
+  } | null>(null);
+  const [splitDataA, setSplitDataA] = useState<TweetPredictionRequest | null>(null);
+  const [splitDataB, setSplitDataB] = useState<TweetPredictionRequest | null>(null);
+  const [isLoadingSingle, setIsLoadingSingle] = useState(false);
+  const [isLoadingSplit, setIsLoadingSplit] = useState(false);
+  const { toast } = useToast();
+
+  const handleSinglePredict = async (data: TweetPredictionRequest) => {
+    try {
+      setIsLoadingSingle(true);
+      const response = await predictTweet(data);
+      const quality = getQualityMetrics(response.likes, response.retweets, response.replies);
+      setSingleResults({
+        likes: response.likes,
+        retweets: response.retweets,
+        replies: response.replies,
+        quality,
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to get prediction. Please try again.",
+        variant: "destructive",
+      });
+      console.error('Prediction error:', error);
+    } finally {
+      setIsLoadingSingle(false);
+    }
   };
 
-  const handleSinglePredict = (data: any) => {
-    console.log('Single prediction data:', data);
-    setSingleResults(generateMockPrediction());
-  };
+  const handleSplitPredict = async (data: TweetPredictionRequest, isA: boolean) => {
+    if (isA) {
+      setSplitDataA(data);
+    } else {
+      setSplitDataB(data);
+    }
 
-  const handleSplitDataA = (data: any) => {
-    console.log('Split data A:', data);
-    setSplitDataA(data);
-  };
+    // Only predict if we have both tweets
+    if ((isA && splitDataB) || (!isA && splitDataA)) {
+      try {
+        setIsLoadingSplit(true);
+        const [responseA, responseB] = await Promise.all([
+          predictTweet(isA ? data : splitDataA!),
+          predictTweet(isA ? splitDataB! : data),
+        ]);
 
-  const handleSplitDataB = (data: any) => {
-    console.log('Split data B:', data);
-    setSplitDataB(data);
-  };
+        const qualityA = getQualityMetrics(responseA.likes, responseA.retweets, responseA.replies);
+        const qualityB = getQualityMetrics(responseB.likes, responseB.retweets, responseB.replies);
 
-  const handleSplitPredict = () => {
-    if (splitDataA && splitDataB) {
-      setSplitResultsA(generateMockPrediction());
-      setSplitResultsB(generateMockPrediction());
+        setSplitResultsA({
+          likes: responseA.likes,
+          retweets: responseA.retweets,
+          replies: responseA.replies,
+          quality: qualityA,
+        });
+
+        setSplitResultsB({
+          likes: responseB.likes,
+          retweets: responseB.retweets,
+          replies: responseB.replies,
+          quality: qualityB,
+        });
+      } catch (error) {
+        toast({
+          title: "Error",
+          description: "Failed to get predictions. Please try again.",
+          variant: "destructive",
+        });
+        console.error('Split prediction error:', error);
+      } finally {
+        setIsLoadingSplit(false);
+      }
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 font-apex">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">Tweet Engagement Prediction</h1>
-          <p className="text-lg text-gray-600">Predict how your tweet will perform before posting</p>
-        </div>
+    <div className="container mx-auto py-8 space-y-8">
+      <h1 className="text-3xl font-bold text-center">Tweet Engagement Predictor</h1>
+      <p className="text-center text-muted-foreground max-w-2xl mx-auto">
+        Enter your tweet details below to predict its potential engagement. You can also compare two different versions
+        of your tweet to see which one might perform better.
+      </p>
 
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-          <Tabs defaultValue="single" className="w-full">
-            <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-              <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 bg-white shadow-sm border border-gray-200 h-12">
-                <TabsTrigger 
-                  value="single" 
-                  className="data-[state=active]:bg-gray-900 data-[state=active]:text-white data-[state=inactive]:text-gray-700 font-semibold py-3 h-10 transition-all duration-200"
-                >
-                  Single Tweet Mode
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="split" 
-                  className="data-[state=active]:bg-gray-900 data-[state=active]:text-white data-[state=inactive]:text-gray-700 font-semibold py-3 h-10 transition-all duration-200"
-                >
-                  Split-Test Mode
-                </TabsTrigger>
-              </TabsList>
+      <Tabs defaultValue="single" className="max-w-4xl mx-auto">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="single">Single Tweet</TabsTrigger>
+          <TabsTrigger value="split">Split Test</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="single" className="space-y-6">
+          <TweetInputBlock
+            onPredict={handleSinglePredict}
+            isLoading={isLoadingSingle}
+          />
+          {singleResults && (
+            <PredictionResults
+              data={singleResults.quality}
+            />
+          )}
+        </TabsContent>
+
+        <TabsContent value="split" className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Tweet A</h3>
+              <TweetInputBlock
+                onPredict={(data) => handleSplitPredict(data, true)}
+                isLoading={isLoadingSplit}
+              />
+              {splitResultsA && (
+                <PredictionResults
+                  data={splitResultsA.quality}
+                  title="Tweet A Results"
+                />
+              )}
             </div>
-
-            <div className="p-8">
-              <TabsContent value="single" className="space-y-8 mt-0">
-                <TweetInputBlock onPredict={handleSinglePredict} showPredictButton={true} />
-                {singleResults && (
-                  <PredictionResults data={singleResults} title="Prediction Results" />
-                )}
-              </TabsContent>
-
-              <TabsContent value="split" className="space-y-8 mt-0">
-                <div className="grid lg:grid-cols-2 gap-8">
-                  <div className="space-y-6">
-                    <TweetInputBlock onPredict={handleSplitDataA} title="Tweet A" showPredictButton={false} />
-                  </div>
-                  <div className="space-y-6">
-                    <TweetInputBlock onPredict={handleSplitDataB} title="Tweet B" showPredictButton={false} />
-                  </div>
-                </div>
-                
-                <div className="text-center pt-4">
-                  <Button 
-                    onClick={handleSplitPredict}
-                    disabled={!splitDataA || !splitDataB}
-                    className="bg-gray-900 hover:bg-gray-700 text-white font-bold px-8 py-3 text-lg disabled:bg-gray-300 disabled:text-gray-500"
-                  >
-                    Predict Both Tweets
-                  </Button>
-                </div>
-
-                {(splitResultsA || splitResultsB) && (
-                  <div className="grid lg:grid-cols-2 gap-8 mt-8">
-                    {splitResultsA && (
-                      <PredictionResults data={splitResultsA} title="Results A" />
-                    )}
-                    {splitResultsB && (
-                      <PredictionResults data={splitResultsB} title="Results B" />
-                    )}
-                  </div>
-                )}
-              </TabsContent>
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">Tweet B</h3>
+              <TweetInputBlock
+                onPredict={(data) => handleSplitPredict(data, false)}
+                isLoading={isLoadingSplit}
+              />
+              {splitResultsB && (
+                <PredictionResults
+                  data={splitResultsB.quality}
+                  title="Tweet B Results"
+                />
+              )}
             </div>
-          </Tabs>
-        </div>
-      </div>
+          </div>
+        </TabsContent>
+      </Tabs>
     </div>
   );
-};
-
-export default Prediction;
+} 

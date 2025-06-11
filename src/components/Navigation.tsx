@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { User, LogOut, BarChart3, Clock } from 'lucide-react';
@@ -8,16 +7,14 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 interface NavigationProps {
   isLoggedIn: boolean;
   user?: {
-    name: string;
     username: string;
-    followers: number;
-    profileImage: string;
+    followerCount: number;
+    profileImageUrl: string;
   };
-  onLogin: () => void;
   onLogout: () => void;
 }
 
-const Navigation = ({ isLoggedIn, user, onLogin, onLogout }: NavigationProps) => {
+const Navigation = ({ isLoggedIn, user, onLogout }: NavigationProps) => {
   const location = useLocation();
 
   return (
@@ -60,24 +57,16 @@ const Navigation = ({ isLoggedIn, user, onLogin, onLogout }: NavigationProps) =>
           </div>
 
           <div className="flex items-center space-x-4">
-            {!isLoggedIn ? (
-              <Button 
-                onClick={onLogin} 
-                className="bg-black hover:bg-gray-800 text-white font-semibold px-6 py-2 rounded-full"
-              >
-                <User className="w-4 h-4 mr-2" />
-                Login with X
-              </Button>
-            ) : (
+            {!isLoggedIn ? null : (
               <div className="flex items-center space-x-4">
                 <div className="text-right">
-                  <p className="text-sm font-semibold text-gray-900">{user?.name}</p>
-                  <p className="text-xs text-gray-500">{user?.followers?.toLocaleString()} followers</p>
+                  <p className="text-sm font-semibold text-gray-900">@{user?.username}</p>
+                  <p className="text-xs text-gray-500">{user?.followerCount?.toLocaleString()} followers</p>
                 </div>
                 <Avatar className="h-10 w-10">
-                  <AvatarImage src={user?.profileImage} />
+                  <AvatarImage src={user?.profileImageUrl} />
                   <AvatarFallback className="bg-gray-200 text-gray-700 font-semibold">
-                    {user?.name?.charAt(0)}
+                    {user?.username?.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
                 <Button 

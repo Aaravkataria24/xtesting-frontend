@@ -1,198 +1,198 @@
-
-import { useState, useEffect } from 'react';
-import { Calendar, Copy, Image, Video, Link as LinkIcon, X, Clock } from 'lucide-react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { useToast } from '@/hooks/use-toast';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
+import { TweetPredictionRequest } from '@/lib/api';
+import { AtSign, Hash, Quote, BarChart2, Link, Video } from 'lucide-react';
 
 interface TweetInputBlockProps {
-  onPredict: (data: {
-    text: string;
-    hasImage: boolean;
-    hasVideo: boolean;
-    hasLink: boolean;
-    scheduledTime: string;
-  }) => void;
-  title?: string;
-  showPredictButton?: boolean;
+  onPredict: (data: TweetPredictionRequest) => void;
+  isLoading?: boolean;
 }
 
-const TweetInputBlock = ({ onPredict, title, showPredictButton = true }: TweetInputBlockProps) => {
+export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBlockProps) {
   const [text, setText] = useState('');
   const [hasImage, setHasImage] = useState(false);
   const [hasVideo, setHasVideo] = useState(false);
   const [hasLink, setHasLink] = useState(false);
-  const [scheduledTime, setScheduledTime] = useState('');
-  const { toast } = useToast();
-
-  useEffect(() => {
-    const now = new Date();
-    const formatted = now.toISOString().slice(0, 16);
-    setScheduledTime(formatted);
-  }, []);
-
-  // Auto-trigger onPredict when data changes (for split mode)
-  useEffect(() => {
-    if (!showPredictButton && text.trim()) {
-      onPredict({
-        text,
-        hasImage,
-        hasVideo,
-        hasLink,
-        scheduledTime,
-      });
-    }
-  }, [text, hasImage, hasVideo, hasLink, scheduledTime, showPredictButton, onPredict]);
-
-  const handleClear = () => {
-    setText('');
-    setHasImage(false);
-    setHasVideo(false);
-    setHasLink(false);
-  };
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(text);
-    toast({
-      title: "Copied!",
-      description: "Tweet text copied to clipboard",
-    });
-  };
+  const [hasMention, setHasMention] = useState(false);
+  const [hasCryptoMention, setHasCryptoMention] = useState(false);
+  const [isQuoting, setIsQuoting] = useState(false);
+  const [hasPoll, setHasPoll] = useState(false);
+  const [followerCount, setFollowerCount] = useState(1000);
+  const [timePosted, setTimePosted] = useState(new Date().toISOString());
 
   const handlePredict = () => {
     if (!text.trim()) {
-      toast({
-        title: "Error",
-        description: "Please enter some tweet text",
-        variant: "destructive",
-      });
       return;
     }
 
-    onPredict({
-      text,
-      hasImage,
-      hasVideo,
-      hasLink,
-      scheduledTime,
-    });
+    const data: TweetPredictionRequest = {
+      text: text.trim(),
+      has_image: hasImage,
+      has_video: hasVideo,
+      has_link: hasLink,
+      has_mention: hasMention,
+      has_crypto_mention: hasCryptoMention,
+      is_quoting: isQuoting,
+      has_poll: hasPoll,
+      follower_count: followerCount,
+      time_posted: timePosted,
+    };
+
+    onPredict(data);
   };
 
-  const characterCount = text.length;
-  const isOverLimit = characterCount > 2000;
-
   return (
-    <div className="bg-white rounded-xl border-2 border-slate-200 shadow-lg overflow-hidden">
-      {title && (
-        <div className="bg-slate-50 px-6 py-4 border-b border-slate-200">
-          <h3 className="text-xl font-bold text-slate-900">{title}</h3>
-        </div>
-      )}
-      
-      <div className="p-6 space-y-6">
+    <div className="space-y-6 bg-white rounded-xl border-2 border-slate-200 shadow-lg p-6">
+      <div className="space-y-4">
         <div className="relative">
           <Textarea
+            placeholder="What's happening?"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="What's happening?"
-            className="min-h-[140px] text-lg border-2 border-slate-200 focus:border-slate-400 focus:ring-0 rounded-lg p-4 placeholder:text-slate-400 resize-none bg-slate-50"
+            className="min-h-[120px] resize-none text-lg"
+            maxLength={280}
           />
+          <div className="absolute bottom-2 right-2 text-sm text-gray-500">
+            {text.length}/280
+          </div>
         </div>
 
-        <div className="flex flex-wrap gap-3">
-          <Button
-            variant={hasImage ? "default" : "outline"}
-            size="sm"
-            onClick={() => setHasImage(!hasImage)}
-            className={`font-semibold transition-all ${
-              hasImage 
-                ? 'bg-slate-900 text-white hover:bg-slate-700' 
-                : 'border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400'
-            }`}
-          >
-            <Image className="w-4 h-4 mr-2" />
-            Image
-          </Button>
-          <Button
-            variant={hasVideo ? "default" : "outline"}
-            size="sm"
-            onClick={() => setHasVideo(!hasVideo)}
-            className={`font-semibold transition-all ${
-              hasVideo 
-                ? 'bg-slate-900 text-white hover:bg-slate-700' 
-                : 'border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400'
-            }`}
-          >
-            <Video className="w-4 h-4 mr-2" />
-            Video
-          </Button>
-          <Button
-            variant={hasLink ? "default" : "outline"}
-            size="sm"
-            onClick={() => setHasLink(!hasLink)}
-            className={`font-semibold transition-all ${
-              hasLink 
-                ? 'bg-slate-900 text-white hover:bg-slate-700' 
-                : 'border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400'
-            }`}
-          >
-            <LinkIcon className="w-4 h-4 mr-2" />
-            Link
-          </Button>
-        </div>
-
-        <div className="flex items-center space-x-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
-          <Clock className="w-5 h-5 text-slate-500" />
-          <span className="text-sm font-medium text-slate-700">Schedule for:</span>
-          <input
-            type="datetime-local"
-            value={scheduledTime}
-            onChange={(e) => setScheduledTime(e.target.value)}
-            className="text-sm text-slate-700 bg-white border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent"
-          />
-        </div>
-
-        <div className="flex justify-between items-center pt-4 border-t-2 border-slate-100">
-          <div className="flex space-x-3">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={handleClear}
-              className="border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400 font-semibold"
-            >
-              <X className="w-4 h-4 mr-2" />
-              Clear
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={handleCopy}
-              className="border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400 font-semibold"
-            >
-              <Copy className="w-4 h-4 mr-2" />
-              Copy
-            </Button>
+        <div className="flex flex-wrap gap-4">
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="has-image"
+              checked={hasImage}
+              onCheckedChange={setHasImage}
+              disabled={isLoading}
+            />
+            <Label htmlFor="has-image" className="flex items-center gap-2">
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              Image
+            </Label>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <span className={`text-sm font-medium ${isOverLimit ? 'text-red-600' : 'text-slate-500'}`}>
-              {characterCount}/2000
-            </span>
-            {showPredictButton && (
-              <Button 
-                onClick={handlePredict}
-                disabled={isOverLimit || !text.trim()}
-                className="bg-slate-900 hover:bg-slate-700 text-white font-bold px-6 py-2 disabled:bg-slate-300 disabled:text-slate-500"
-              >
-                Predict Engagement
-              </Button>
-            )}
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="has-video"
+              checked={hasVideo}
+              onCheckedChange={setHasVideo}
+              disabled={isLoading}
+            />
+            <Label htmlFor="has-video" className="flex items-center gap-2">
+              <Video className="w-4 h-4" />
+              Video
+            </Label>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="has-link"
+              checked={hasLink}
+              onCheckedChange={setHasLink}
+              disabled={isLoading}
+            />
+            <Label htmlFor="has-link" className="flex items-center gap-2">
+              <Link className="w-4 h-4" />
+              Link
+            </Label>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="has-mention"
+              checked={hasMention}
+              onCheckedChange={setHasMention}
+              disabled={isLoading}
+            />
+            <Label htmlFor="has-mention" className="flex items-center gap-2">
+              <AtSign className="w-4 h-4" />
+              Mention
+            </Label>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="has-crypto"
+              checked={hasCryptoMention}
+              onCheckedChange={setHasCryptoMention}
+              disabled={isLoading}
+            />
+            <Label htmlFor="has-crypto" className="flex items-center gap-2">
+              <Hash className="w-4 h-4" />
+              Crypto
+            </Label>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="is-quoting"
+              checked={isQuoting}
+              onCheckedChange={setIsQuoting}
+              disabled={isLoading}
+            />
+            <Label htmlFor="is-quoting" className="flex items-center gap-2">
+              <Quote className="w-4 h-4" />
+              Quote
+            </Label>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <Switch
+              id="has-poll"
+              checked={hasPoll}
+              onCheckedChange={setHasPoll}
+              disabled={isLoading}
+            />
+            <Label htmlFor="has-poll" className="flex items-center gap-2">
+              <BarChart2 className="w-4 h-4" />
+              Poll
+            </Label>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="follower-count">Follower Count</Label>
+            <Input
+              id="follower-count"
+              type="number"
+              value={followerCount}
+              onChange={(e) => setFollowerCount(Number(e.target.value))}
+              min={0}
+              disabled={isLoading}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="time-posted">Time Posted</Label>
+            <Input
+              id="time-posted"
+              type="datetime-local"
+              value={timePosted.slice(0, 16)}
+              onChange={(e) => setTimePosted(new Date(e.target.value).toISOString())}
+              disabled={isLoading}
+            />
           </div>
         </div>
       </div>
+
+      <div className="flex justify-end">
+        <Button
+          onClick={handlePredict}
+          disabled={!text.trim() || isLoading}
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition-colors"
+        >
+          {isLoading ? 'Predicting...' : 'Predict Engagement'}
+        </Button>
+      </div>
     </div>
   );
-};
-
-export default TweetInputBlock;
+}

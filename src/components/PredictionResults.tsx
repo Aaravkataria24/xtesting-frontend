@@ -1,4 +1,3 @@
-
 import { TrendingUp, Heart, Repeat2, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -95,4 +94,4 @@ const PredictionResults = ({ data, title }: PredictionResultsProps) => {
   );
 };
 
-export default PredictionResults;
+export { PredictionResults };
