@@ -114,17 +114,19 @@ export default function Prediction() {
   };
 
   return (
-    <div className="container mx-auto py-8 space-y-8">
-      <h1 className="text-3xl font-bold text-center">Tweet Engagement Predictor</h1>
-      <p className="text-center text-muted-foreground max-w-2xl mx-auto">
-        Enter your tweet details below to predict its potential engagement. You can also compare two different versions
-        of your tweet to see which one might perform better.
+    <div className="container mx-auto py-8">
+      <h1 className="text-3xl font-bold text-center mb-1">Tweet Engagement Predictor</h1>
+      <p className="text-center text-gray-500 max-w-2xl mx-auto mb-6">
+        Predict how your tweet will perform before posting.
       </p>
-
       <Tabs defaultValue="single" className="max-w-4xl mx-auto">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="single">Single Tweet</TabsTrigger>
-          <TabsTrigger value="split">Split Test</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-2 bg-transparent border border-gray-200 rounded-full overflow-hidden mb-6 h-14 items-center">
+          <TabsTrigger value="single" className="transition-all font-semibold rounded-full px-6 py-2 text-base border-none flex items-center justify-center h-full data-[state=active]:bg-black data-[state=active]:text-white data-[state=inactive]:bg-white data-[state=inactive]:text-black data-[state=inactive]:border-none">
+            Single Tweet Mode
+          </TabsTrigger>
+          <TabsTrigger value="split" className="transition-all font-semibold rounded-full px-6 py-2 text-base border-none flex items-center justify-center h-full data-[state=active]:bg-black data-[state=active]:text-white data-[state=inactive]:bg-white data-[state=inactive]:text-black data-[state=inactive]:border-none">
+            Split-Test Mode
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="single" className="space-y-6">
