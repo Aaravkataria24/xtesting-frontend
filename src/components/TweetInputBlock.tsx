@@ -20,7 +20,6 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
   const [hasCryptoMention, setHasCryptoMention] = useState(false);
   const [isQuoting, setIsQuoting] = useState(false);
   const [hasPoll, setHasPoll] = useState(false);
-  const [followerCount, setFollowerCount] = useState(1000);
   const [timePosted, setTimePosted] = useState(new Date().toISOString().slice(0, 16));
 
   const handlePredict = () => {
@@ -34,7 +33,6 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
       has_crypto_mention: hasCryptoMention,
       is_quoting: isQuoting,
       has_poll: hasPoll,
-      follower_count: followerCount,
       time_posted: new Date(timePosted).toISOString(),
     };
     onPredict(data);
@@ -49,7 +47,6 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
     setHasCryptoMention(false);
     setIsQuoting(false);
     setHasPoll(false);
-    setFollowerCount(1000);
     setTimePosted(new Date().toISOString().slice(0, 16));
   };
 
@@ -78,7 +75,7 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
           value={text}
           onChange={(e) => setText(e.target.value)}
           className="min-h-[120px] resize-none text-lg !placeholder-gray-400 bg-gray-50 border border-gray-200 focus:border-gray-400 focus:ring-0 rounded-xl"
-          maxLength={280}
+          maxLength={2000}
         />
         <div className="flex items-center justify-between w-full">
           <div className="flex flex-wrap gap-2">
@@ -116,20 +113,9 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
               <Link className="w-5 h-5" /> Link
             </Button>
           </div>
-          <span className="text-sm text-gray-400 ml-2">{text.length}/280</span>
+          <span className="text-sm text-gray-400 ml-2">{text.length}/2000</span>
         </div>
         <div className="flex flex-col md:flex-row gap-4 items-center">
-          <div className="flex-1 w-full">
-            <Label htmlFor="follower-count">Follower Count</Label>
-            <Input
-              id="follower-count"
-              type="number"
-              value={followerCount}
-              onChange={(e) => setFollowerCount(Number(e.target.value))}
-              min={0}
-              className="bg-gray-50 border border-gray-200 focus:border-gray-400 focus:ring-0 rounded-xl mt-1"
-            />
-          </div>
           <div className="flex-1 w-full">
             <Label htmlFor="time-posted">Schedule for:</Label>
             <div className="flex items-center gap-2 mt-1">

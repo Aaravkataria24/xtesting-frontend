@@ -46,6 +46,9 @@ export default function Prediction() {
   const { toast } = useToast();
 
   const handleSinglePredict = async (data: TweetPredictionRequest) => {
+    const storedUser = localStorage.getItem("x_user");
+    console.log("Debug: User info from localStorage:", storedUser ? JSON.parse(storedUser) : "Not found");
+    console.log("Debug: Prediction request payload (without follower_count):", { ...data, follower_count: undefined });
     try {
       setIsLoadingSingle(true);
       const response = await predictTweet(data);
@@ -69,6 +72,9 @@ export default function Prediction() {
   };
 
   const handleSplitPredict = async (data: TweetPredictionRequest, isA: boolean) => {
+    const storedUser = localStorage.getItem("x_user");
+    console.log("Debug (Split): User info from localStorage:", storedUser ? JSON.parse(storedUser) : "Not found");
+    console.log("Debug (Split): Prediction request payload (without follower_count):", { ...data, follower_count: undefined });
     if (isA) {
       setSplitDataA(data);
     } else {

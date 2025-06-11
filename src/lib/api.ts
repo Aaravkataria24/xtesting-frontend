@@ -9,6 +9,15 @@ const api = axios.create({
   },
 });
 
+// Add request interceptor to include x_user in headers
+api.interceptors.request.use((config) => {
+  const xUser = localStorage.getItem('x_user');
+  if (xUser) {
+    config.headers['x_user'] = xUser;
+  }
+  return config;
+});
+
 export interface TweetPredictionRequest {
   text: string;
   has_image: boolean;
@@ -19,7 +28,7 @@ export interface TweetPredictionRequest {
   is_quoting: boolean;
   has_poll: boolean;
   time_posted: string;
-  follower_count: number;
+  follower_count?: number;
   view_count?: number;
   length?: number;
 }
@@ -31,6 +40,8 @@ export interface TweetPredictionResponse {
 }
 
 export const predictTweet = async (data: TweetPredictionRequest): Promise<TweetPredictionResponse> => {
+  // Log outgoing payload (omitting follower_count) for debugging
+  console.log("Debug (API): Outgoing prediction request payload (without follower_count):", { ...data, follower_count: undefined });
   try {
     const response = await api.post<TweetPredictionResponse>('/predict', data);
     return response.data;
