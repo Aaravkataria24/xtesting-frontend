@@ -14,9 +14,10 @@ import { format } from "date-fns";
 interface TweetInputBlockProps {
   onPredict: (data: TweetPredictionRequest) => void;
   isLoading?: boolean;
+  compact?: boolean;
 }
 
-export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBlockProps) {
+export function TweetInputBlock({ onPredict, isLoading = false, compact = false }: TweetInputBlockProps) {
   const [text, setText] = useState('');
   const [hasImage, setHasImage] = useState(false);
   const [hasVideo, setHasVideo] = useState(false);
@@ -186,7 +187,7 @@ export function TweetInputBlock({ onPredict, isLoading = false }: TweetInputBloc
           <Button
             onClick={handlePredict}
             disabled={!text.trim() || isLoading}
-            className="ml-auto flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-2 px-6 rounded-full transition-colors text-base shadow-md"
+            className={`ml-auto flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold rounded-full transition-colors shadow-md ${compact ? 'py-1 px-3 text-sm' : 'py-2 px-6 text-base'}`}
           >
             <BarChart3 className="w-5 h-5" />
             {isLoading ? 'Predicting...' : 'Predict Engagement'}

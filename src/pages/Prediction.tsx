@@ -154,6 +154,7 @@ export default function Prediction() {
               <TweetInputBlock
                 onPredict={(data) => handleSplitPredict(data, true)}
                 isLoading={isLoadingSplit}
+                compact={true}
               />
               {splitResultsA && (
                 <PredictionResults
@@ -167,6 +168,7 @@ export default function Prediction() {
               <TweetInputBlock
                 onPredict={(data) => handleSplitPredict(data, false)}
                 isLoading={isLoadingSplit}
+                compact={true}
               />
               {splitResultsB && (
                 <PredictionResults

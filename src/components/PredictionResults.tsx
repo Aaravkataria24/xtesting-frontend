@@ -32,7 +32,6 @@ const PredictionResults = ({ data, title }: PredictionResultsProps) => {
             <CardTitle className="text-sm font-bold text-slate-700 uppercase tracking-wide">Likes</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-3xl font-black text-slate-900 mb-3">{data.likes.value.toLocaleString()}</p>
             <Badge className={`font-semibold px-3 py-1 ${data.likes.color}`}>
               {data.likes.quality}
             </Badge>
@@ -49,7 +48,6 @@ const PredictionResults = ({ data, title }: PredictionResultsProps) => {
             <CardTitle className="text-sm font-bold text-slate-700 uppercase tracking-wide">Retweets</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-3xl font-black text-slate-900 mb-3">{data.retweets.value.toLocaleString()}</p>
             <Badge className={`font-semibold px-3 py-1 ${data.retweets.color}`}>
               {data.retweets.quality}
             </Badge>
@@ -66,7 +64,6 @@ const PredictionResults = ({ data, title }: PredictionResultsProps) => {
             <CardTitle className="text-sm font-bold text-slate-700 uppercase tracking-wide">Replies</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-3xl font-black text-slate-900 mb-3">{data.replies.value.toLocaleString()}</p>
             <Badge className={`font-semibold px-3 py-1 ${data.replies.color}`}>
               {data.replies.quality}
             </Badge>
@@ -83,7 +80,6 @@ const PredictionResults = ({ data, title }: PredictionResultsProps) => {
             <CardTitle className="text-sm font-bold text-slate-700 uppercase tracking-wide">Engagement</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-3xl font-black text-slate-900 mb-3">{data.engagement.value}%</p>
             <Badge className={`font-semibold px-3 py-1 ${data.engagement.color}`}>
               {data.engagement.quality}
             </Badge>

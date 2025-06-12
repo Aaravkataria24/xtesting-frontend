@@ -55,27 +55,34 @@ export const predictTweet = async (data: TweetPredictionRequest): Promise<TweetP
 
 // Helper function to determine quality based on metrics
 export const getQualityMetrics = (likes: number, retweets: number, replies: number) => {
-  const getQuality = (value: number, thresholds: { good: number; veryGood: number; excellent: number }) => {
-    if (value >= thresholds.excellent) return { quality: 'Excellent', color: 'bg-purple-500 text-white' };
+  const getQuality = (value: number, thresholds: { decent: number; veryGood: number; excellent: number; bad: number }) => {
+    if (value > thresholds.excellent) return { quality: 'Excellent', color: 'bg-purple-500 text-white' };
     if (value >= thresholds.veryGood) return { quality: 'Very Good', color: 'bg-blue-500 text-white' };
-    if (value >= thresholds.good) return { quality: 'Good', color: 'bg-emerald-500 text-white' };
-    if (value >= thresholds.good / 2) return { quality: 'Bad', color: 'bg-orange-500 text-white' };
+    if (value >= thresholds.decent) return { quality: 'Decent', color: 'bg-emerald-500 text-white' };
+    if (value >= thresholds.bad) return { quality: 'Bad', color: 'bg-orange-500 text-white' };
     return { quality: 'Very Bad', color: 'bg-red-500 text-white' };
   };
 
-  // Calculate engagement score (weighted average)
+  // Likes thresholds
+  const likesThresholds = { bad: 35, decent: 141, veryGood: 438, excellent: 3200 };
+  // Replies thresholds
+  const repliesThresholds = { bad: 5, decent: 25, veryGood: 87, excellent: 533 };
+  // Retweets thresholds
+  const retweetsThresholds = { bad: 2, decent: 9, veryGood: 39, excellent: 407 };
+
+  // Calculate engagement score (weighted average, thresholds unchanged)
   const engagementScore = Math.round(
-    (likes * 0.5 + retweets * 0.3 + replies * 0.2) / 
+    (likes * 0.5 + retweets * 0.3 + replies * 0.2) /
     (likes + retweets + replies) * 100
   );
 
   return {
-    likes: { value: likes, ...getQuality(likes, { good: 100, veryGood: 500, excellent: 1000 }) },
-    retweets: { value: retweets, ...getQuality(retweets, { good: 50, veryGood: 200, excellent: 500 }) },
-    replies: { value: replies, ...getQuality(replies, { good: 25, veryGood: 100, excellent: 250 }) },
-    engagement: { 
-      value: engagementScore, 
-      ...getQuality(engagementScore, { good: 60, veryGood: 75, excellent: 90 }) 
+    likes: { value: likes, ...getQuality(likes, likesThresholds) },
+    retweets: { value: retweets, ...getQuality(retweets, retweetsThresholds) },
+    replies: { value: replies, ...getQuality(replies, repliesThresholds) },
+    engagement: {
+      value: engagementScore,
+      ...getQuality(engagementScore, { bad: 30, decent: 60, veryGood: 75, excellent: 90 }) // unchanged
     }
   };
 }; 
